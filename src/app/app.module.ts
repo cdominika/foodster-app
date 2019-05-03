@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { NavComponent } from './nav/nav.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { CategoryListingComponent } from './category-listing/category-listing.component';
 
 const routes: Routes = [
   {
@@ -20,7 +21,8 @@ const routes: Routes = [
     AppComponent,
     MainComponent,
     NavComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    CategoryListingComponent
   ],
   imports: [
     BrowserModule,
