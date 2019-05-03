@@ -1,6 +1,9 @@
 <h1>Quick and easy beef recipes</h1>
 <section *ngIf="dishes !== null">
   <ul *ngFor="let dish of dishes.meals, let i = index">
-    <li>{{dish.strMeal}}</li>
+    <div class="dish-box">
+    <img src="{{dish.strMealThumb}}" alt="{{dish.strMeal}}">
+    <li class="dish">{{dish.strMeal}}</li>
+    </div>
   </ul>
 </section>
