@@ -3,6 +3,9 @@ ul, li {
 }
 
 .dish-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   width: 300px;
   box-sizing: border-box;
   padding: 10px;
@@ -11,6 +14,7 @@ ul, li {
 
 img {
   width: 98%;
+  border-radius: 5px;
 }
 
 .all-dishes {

@@ -4,7 +4,9 @@
   <ul *ngFor="let dish of dishes.meals, let i = index">
     <div class="dish-box">
     <img src="{{dish.strMealThumb}}" alt="{{dish.strMeal}}">
+      <div class="details-box">
     <li class="dish">{{dish.strMeal}}</li>
+      </div>
     </div>
   </ul>
 </section>
