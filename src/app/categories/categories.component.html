@@ -1,3 +1,8 @@
-<p>
-  categories works!
-</p>
+<h1 class="logo" routerLink="/">Foodster</h1>
+<div class="wrapper">
+  <section class="categories" *ngIf="categories !== null">
+    <li *ngFor="let category of categories let i = index" class="category-name">
+       {{category.strCategory}}
+    </li>
+  </section>
+</div>
