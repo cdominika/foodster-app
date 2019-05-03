@@ -1,3 +1,18 @@
-<p>
-  main works!
-</p>
+<div class="container">
+  <h1>Can't decide on what to eat today? How about:</h1>
+  <!-- random recipe -->
+  <section *ngIf="random !== null">
+    <div class="wrapper">
+      <div class="recipe-box">
+        <img class="thumb" src="{{random.strMealThumb}}">
+        <div class="details-box">
+          <h2>{{random.strMeal}}</h2>
+        </div>
+      </div>
+      <div class="how-to">
+        <h3>Instructions</h3>
+        <p class="instructions">{{random.strInstructions}}</p>
+      </div>
+    </div>
+  </section>
+</div>
