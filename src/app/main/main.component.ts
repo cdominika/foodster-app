@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  random = {};
+
+  constructor() {
+  }
 
   ngOnInit() {
+    this.fetchRandomRecipe();
+  }
+
+  fetchRandomRecipe() {
+    fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
+      .then(res => res.json())
+      .then(resJson => {
+          this.random = resJson.meals[0];
+          console.log(this.random);
+        }
+      );
   }
 
 }
