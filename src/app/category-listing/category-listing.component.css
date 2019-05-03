@@ -28,3 +28,8 @@ img {
   justify-content: center;
   flex-direction: column;
 }
+
+.dish {
+  font-size: 18px;
+  font-weight: 500;
+}
