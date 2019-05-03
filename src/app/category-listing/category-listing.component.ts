@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryListingComponent implements OnInit {
   dishes = {};
-  constructor() { }
+  constructor() {
+    const cachedDishes = JSON.parse(localStorage.getItem('dishes'));
+    if (cachedDishes !== null || cachedDishes !== {}) {
+      this.dishes = cachedDishes;
+      console.warn(cachedDishes);
+    }
+  }
 
   ngOnInit() {
     this.fetchDishes();
@@ -19,6 +25,7 @@ export class CategoryListingComponent implements OnInit {
       .then(responseJson => {
         this.dishes = responseJson;
         console.log(this.dishes);
+        localStorage.setItem('dishes', JSON.stringify(this.dishes));
       });
   }
 
