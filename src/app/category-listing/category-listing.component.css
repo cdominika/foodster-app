@@ -3,9 +3,24 @@ ul, li {
 }
 
 .dish-box {
-  width: 250px;
+  width: 300px;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 20px;
 }
 
 img {
   width: 98%;
+}
+
+.all-dishes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }

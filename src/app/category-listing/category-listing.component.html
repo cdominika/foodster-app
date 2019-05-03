@@ -1,5 +1,6 @@
+<div class="container">
 <h1>Quick and easy beef recipes</h1>
-<section *ngIf="dishes !== null">
+<section class="all-dishes" *ngIf="dishes !== null">
   <ul *ngFor="let dish of dishes.meals, let i = index">
     <div class="dish-box">
     <img src="{{dish.strMealThumb}}" alt="{{dish.strMeal}}">
@@ -7,3 +8,4 @@
     </div>
   </ul>
 </section>
+</div>
