@@ -8,8 +8,8 @@
         <div class="details-box">
           <h2>{{random.strMeal}}</h2>
           <section class="tags">
-            <p class="category" >{{random.strCategory}} recipes</p>
-            <p class="category" >{{random.strArea}} cuisine</p>
+            <p class="category" routerLink={{random.strCategory.toLowerCase()}}-recipes>{{random.strCategory}} recipes</p>
+            <p class="category" routerLink={{random.strArea.toLowerCase()}}-recipes>{{random.strArea}} cuisine</p>
           </section>
         </div>
       </div>
