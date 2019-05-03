@@ -30,3 +30,9 @@ h1 {
   color: rgb(63, 63, 63);
 }
 
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(255, 183, 0);
+  font-weight: 600;
+}
