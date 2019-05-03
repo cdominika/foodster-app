@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates:400,500');
+@import url('https://fonts.googleapis.com/css?family=Grand+Hotel');
+
+* {
+  font-family: 'Montserrat Alternates', sans-serif;
+  margin: 0 auto;
+  padding: 0;
+}
