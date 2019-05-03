@@ -8,6 +8,16 @@ li {
 .wrapper {
   display: flex;
   justify-content: center;
+  flex-direction: row;
+}
+
+input {
+  width: 500px;
+  margin-left: 430px;
+  border: none;
+  border-bottom: 1px solid #eee;
+  padding: 5px;
+  outline: none;
 }
 
 .categories {
