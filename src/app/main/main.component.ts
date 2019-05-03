@@ -10,6 +10,11 @@ export class MainComponent implements OnInit {
   random = {};
 
   constructor() {
+    const randomFromCache = JSON.parse(localStorage.getItem('random'));
+    if (randomFromCache !== null || randomFromCache !== {}) {
+      this.random = randomFromCache;
+      console.warn(randomFromCache);
+    }
   }
 
   ngOnInit() {
@@ -22,6 +27,7 @@ export class MainComponent implements OnInit {
       .then(resJson => {
           this.random = resJson.meals[0];
           console.log(this.random);
+          localStorage.setItem('random', JSON.stringify(this.random));
         }
       );
   }

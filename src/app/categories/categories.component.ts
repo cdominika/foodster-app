@@ -8,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class CategoriesComponent implements OnInit {
   categories = {};
 
-  constructor() { }
+  constructor() {
+    const navCached = JSON.parse(localStorage.getItem('nav'));
+    if (navCached !== null || navCached !== {}) {
+      this.categories = navCached;
+      console.warn(navCached); // działa
+    }
+  }
 
   ngOnInit() {
     this.fetchCategories();
@@ -20,6 +26,7 @@ export class CategoriesComponent implements OnInit {
       .then(response => response.json())
       .then(responseJson => {
         this.categories = responseJson.meals;
+        localStorage.setItem('nav', JSON.stringify(this.categories));
       });
   }
 
