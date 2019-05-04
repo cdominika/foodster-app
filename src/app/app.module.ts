@@ -16,7 +16,7 @@ const routes: Routes = [
     component: MainComponent
   },
   {
-    path: 'beef-recipes',
+    path: ':category.strCategory-recipes',
     component: CategoryListingComponent
   },
   {
