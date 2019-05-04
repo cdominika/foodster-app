@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryListingComponent implements OnInit {
   dishes = {};
-  active = null;
+  // active = null;
   constructor() {
     const cachedDishes = JSON.parse(localStorage.getItem('dishes'));
     if (cachedDishes !== null || cachedDishes !== {}) {

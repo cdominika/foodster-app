@@ -8,7 +8,7 @@ import { MainComponent } from './main/main.component';
 import { NavComponent } from './nav/nav.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoryListingComponent } from './category-listing/category-listing.component';
-import { RecipeComponent } from './recipe/recipe.component';
+import { RecipeComponent } from './category-listing/recipe/recipe.component';
 
 const routes: Routes = [
   {
