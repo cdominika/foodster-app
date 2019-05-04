@@ -4,7 +4,8 @@
   <div class="dish-box" *ngFor="let dish of dishes.meals, let i = index">
     <img src="{{dish.strMealThumb}}" alt="{{dish.strMeal}}">
       <div class="details-box">
-    <h2 class="dish">{{dish.strMeal}}</h2>
+    <h2 class="dish" routerLink="[{{dish.strMeal.toLowerCase()}}]">
+      {{dish.strMeal}}</h2>
       </div>
     </div>
 </section>

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryListingComponent implements OnInit {
   dishes = {};
+  active = null;
   constructor() {
     const cachedDishes = JSON.parse(localStorage.getItem('dishes'));
     if (cachedDishes !== null || cachedDishes !== {}) {
@@ -28,5 +29,12 @@ export class CategoryListingComponent implements OnInit {
         localStorage.setItem('dishes', JSON.stringify(this.dishes));
       });
   }
+  // handleClick(i) {
+  //   if (this.active === i) {
+  //     this.active = null;
+  //   } else {
+  //     this.active = i;
+  //   }
+  // }
 
 }
