@@ -29,6 +29,9 @@ export class CategoryListingComponent implements OnInit {
         localStorage.setItem('dishes', JSON.stringify(this.dishes));
       });
   }
+  removeWhitespace(str) {
+    return str.replace(/\s+/g, '-');
+  }
   // handleClick(i) {
   //   if (this.active === i) {
   //     this.active = null;
