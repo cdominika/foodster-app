@@ -10,6 +10,7 @@ import { NavComponent } from './nav/nav.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoryListingComponent } from './category-listing/category-listing.component';
 import { RecipeComponent } from './category-listing/recipe/recipe.component';
+import {RecipesService} from './recipes.service';
 
 const routes: Routes = [
   {
@@ -41,7 +42,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule
   ],
-  providers: [],
+  providers: [ RecipesService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
