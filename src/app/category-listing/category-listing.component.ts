@@ -15,7 +15,6 @@ export class CategoryListingComponent implements OnInit {
       console.warn(cachedDishes);
     }
   }
-
   ngOnInit() {
     this.fetchDishes();
   }
@@ -39,5 +38,4 @@ export class CategoryListingComponent implements OnInit {
   //     this.active = i;
   //   }
   // }
-
 }
