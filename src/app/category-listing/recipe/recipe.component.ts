@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {CategoryListingComponent} from '../category-listing.component';
-
+import { RecipesService } from '../../recipes.service';
 
 @Component({
   selector: 'app-recipe',
@@ -8,21 +8,17 @@ import {CategoryListingComponent} from '../category-listing.component';
   styleUrls: ['./recipe.component.css']
 })
 export class RecipeComponent implements OnInit {
-  recipes = {};
+  recipes$;
   // @Input() dishes: object = CategoryListingComponent;
-  constructor() { }
+  constructor(private recipesService: RecipesService) { }
 
   ngOnInit() {
     this.fetchRecipe();
     // console.log();
   }
   fetchRecipe() {
-    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772`)
-      .then(res => res.json())
-      .then(resJSON => {
-        this.recipes = resJSON;
-        console.log(this.recipes);
-      });
+    this.recipes$ = this.recipesService.fetchRecipes();
+    console.log(this.recipes$);
   }
 
 }

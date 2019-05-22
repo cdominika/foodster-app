@@ -6,9 +6,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RecipesService {
-  apiURL = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772'; // przykład
+  recipeURL = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
+  categoryURL = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=';
   constructor(private http: HttpClient) {}
-    fetchRecipes(): Observable<object> {
-      return this.http.get(this.apiURL);
+    fetchRecipes(meal: any) {
+    return this.http.get(this.recipeURL + meal);
     }
 }
