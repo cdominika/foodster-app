@@ -12,4 +12,7 @@ export class RecipesService {
     fetchRecipes(meal: any) {
     return this.http.get(this.recipeURL + meal);
     }
+    fetchCategories(category: string) {
+    return this.http.get(this.categoryURL + category);
+    }
 }
