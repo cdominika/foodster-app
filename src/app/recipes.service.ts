@@ -6,7 +6,9 @@ export interface Meal {
   meal: any;
 }
 
-
+export interface Recipes {
+  meals: any;
+}
 
 @Injectable({
   providedIn: 'root'
