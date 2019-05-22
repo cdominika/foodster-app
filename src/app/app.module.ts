@@ -10,7 +10,7 @@ import { NavComponent } from './nav/nav.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoryListingComponent } from './category-listing/category-listing.component';
 import { RecipeComponent } from './category-listing/recipe/recipe.component';
-import {RecipesService} from './recipes.service';
+import { RecipesService } from './recipes.service';
 
 const routes: Routes = [
   {
@@ -18,11 +18,11 @@ const routes: Routes = [
     component: MainComponent
   },
   {
-    path: ':category.strCategory-recipes',
+    path: ':category.strCategory',
     component: CategoryListingComponent
   },
   {
-    path: 'beef-recipes/:dish.strMeal',
+    path: 'beef-recipes/:dish.strMeal/:dish.idMeal',
     component: RecipeComponent
   }
 ];

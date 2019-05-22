@@ -8,14 +8,13 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./recipe.component.css']
 })
 export class RecipeComponent implements OnInit {
-  recipes$;
-
-  // @Input() dishes: object = CategoryListingComponent;
-  constructor(private recipesService: RecipesService) {
-  }
+  constructor(private recipesService: RecipesService,
+              private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
-    // console.log();
+    this.route.params.subscribe(params => {
+      console.log('params:' + params);
+    });
   }
 }
 
