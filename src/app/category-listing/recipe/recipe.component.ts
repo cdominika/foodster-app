@@ -17,6 +17,7 @@ export class RecipeComponent implements OnInit {
       .subscribe((data: Recipes) => {
         console.log(data.meals[0]);
         this.data = data.meals[0];
+        localStorage.setItem(this.id, JSON.stringify(this.data));
       });
               }
 
@@ -25,7 +26,13 @@ export class RecipeComponent implements OnInit {
       console.log('params:' + params['dish.idMeal']);
       this.id = params['dish.idMeal'];
     });
-    this.showRecipes();
+    const cachedRecipe = JSON.parse(localStorage.getItem(this.id));
+    if (cachedRecipe !== null) {
+      this.data = cachedRecipe;
+      console.warn(cachedRecipe);
+    } else {
+      this.showRecipes();
+    }
   }
 }
 
