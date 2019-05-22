@@ -22,7 +22,7 @@ const routes: Routes = [
     component: CategoryListingComponent
   },
   {
-    path: 'beef-recipes/:dish.strMeal/:dish.idMeal',
+    path: 'beef/:dish.strMeal/:dish.idMeal',
     component: RecipeComponent
   }
 ];
