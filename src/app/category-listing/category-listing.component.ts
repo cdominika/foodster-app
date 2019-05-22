@@ -16,8 +16,14 @@ export class CategoryListingComponent implements OnInit {
     this.route.params.subscribe(params => {
       console.warn(params['category.strCategory']);
       this.category = params['category.strCategory'];
+      const cachedDishes = JSON.parse(localStorage.getItem(this.category));
+      if (cachedDishes !== null) {
+        this.dishes = cachedDishes;
+        console.warn(cachedDishes);
+      } else {
+        this.fetchCategoryDishes(this.category);
+      }
     });
-    this.fetchCategoryDishes(this.category);
   }
 
   fetchCategoryDishes(category) {
@@ -25,6 +31,7 @@ export class CategoryListingComponent implements OnInit {
       .subscribe((data: Recipes) => {
         console.log(data.meals);
         this.dishes = data.meals;
+        localStorage.setItem(this.category, JSON.stringify(this.dishes));
       });
   }
   removeWhitespace(str) {
