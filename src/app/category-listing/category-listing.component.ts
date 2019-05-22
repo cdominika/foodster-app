@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {RecipesService} from '../recipes.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-category-listing',
@@ -6,15 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./category-listing.component.css']
 })
 export class CategoryListingComponent implements OnInit {
-  dishes = {};
-  // active = null;
-  constructor() {
-    const cachedDishes = JSON.parse(localStorage.getItem('dishes'));
-    if (cachedDishes !== null || cachedDishes !== {}) {
-      this.dishes = cachedDishes;
-      console.warn(cachedDishes);
-    }
-  }
+  dishes = [];
+  category;
+  constructor(private recipesService: RecipesService,
+              private route: ActivatedRoute, private router: Router) {}
   ngOnInit() {
     this.fetchDishes();
   }

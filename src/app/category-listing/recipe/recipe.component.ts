@@ -25,6 +25,7 @@ export class RecipeComponent implements OnInit {
       console.log('params:' + params['dish.idMeal']);
       this.id = params['dish.idMeal'];
     });
+    this.showRecipes();
   }
 }
 
