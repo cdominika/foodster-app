@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {RecipesService} from '../recipes.service';
+import { RecipesService, Recipes } from '../recipes.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
@@ -13,16 +13,18 @@ export class CategoryListingComponent implements OnInit {
   constructor(private recipesService: RecipesService,
               private route: ActivatedRoute, private router: Router) {}
   ngOnInit() {
-    this.fetchDishes();
+    this.route.params.subscribe(params => {
+      console.warn(params['category.strCategory']);
+      this.category = params['category.strCategory'];
+    });
+    this.fetchCategoryDishes(this.category);
   }
 
-  fetchDishes() {
-    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=beef`)
-      .then(response => response.json())
-      .then(responseJson => {
-        this.dishes = responseJson;
-        console.log(this.dishes);
-        localStorage.setItem('dishes', JSON.stringify(this.dishes));
+  fetchCategoryDishes(category) {
+    this.recipesService.fetchCategories(category)
+      .subscribe((data: Recipes) => {
+        console.log(data.meals);
+        this.dishes = data.meals;
       });
   }
   removeWhitespace(str) {
