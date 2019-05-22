@@ -1,10 +1,10 @@
 <div class="container">
-  <h1>Quick and easy beef recipes</h1>
+  <h1>Quick and easy {{category}} recipes</h1>
   <section class="all-dishes" *ngIf="dishes !== null">
-    <div class="dish-box" *ngFor="let dish of dishes.meals, let i = index">
+    <div class="dish-box" *ngFor="let dish of dishes, let i = index">
       <img src="{{dish.strMealThumb}}" alt="{{dish.strMeal}}">
       <div class="details-box">
-        <h2 class="dish" routerLink={{removeWhitespace(dish.strMeal).toLowerCase()}}>
+        <h2 class="dish" routerLink="{{removeWhitespace(dish.strMeal).toLowerCase()}}/{{dish.idMeal}}">
         {{dish.strMeal}}</h2>
       </div>
     </div>

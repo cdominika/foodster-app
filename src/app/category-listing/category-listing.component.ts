@@ -30,11 +30,4 @@ export class CategoryListingComponent implements OnInit {
   removeWhitespace(str) {
     return str.replace(/\s+/g, '-');
   }
-  // handleClick(i) {
-  //   if (this.active === i) {
-  //     this.active = null;
-  //   } else {
-  //     this.active = i;
-  //   }
-  // }
 }
