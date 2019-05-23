@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { RecipesService, Recipes } from '../../recipes.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import {AppComponent} from '../../app.component';
+
 
 @Component({
   selector: 'app-recipe',
@@ -11,12 +13,14 @@ export class RecipeComponent implements OnInit {
   data: Recipes;
   id;
   constructor(private recipesService: RecipesService,
-              private route: ActivatedRoute, private router: Router) {}
+              private route: ActivatedRoute, private router: Router,
+              private app: AppComponent) {}
               showRecipes() {
     this.recipesService.fetchRecipes(this.id)
       .subscribe((data: Recipes) => {
         console.log(data.meals[0]);
         this.data = data.meals[0];
+        this.app.setTitle(`${data.meals[0].strMeal} Recipe | Foodster `);
         localStorage.setItem(this.id, JSON.stringify(this.data));
       });
               }

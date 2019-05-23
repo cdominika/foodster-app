@@ -44,7 +44,10 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule
   ],
-  providers: [ RecipesService ],
+  providers: [
+    RecipesService,
+    Title
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

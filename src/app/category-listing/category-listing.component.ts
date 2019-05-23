@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipesService, Recipes } from '../recipes.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-category-listing',
@@ -11,11 +12,15 @@ export class CategoryListingComponent implements OnInit {
   dishes = [];
   category;
   constructor(private recipesService: RecipesService,
-              private route: ActivatedRoute, private router: Router) {}
+              private route: ActivatedRoute,
+              private app: AppComponent,
+              private router: Router) {}
+
   ngOnInit() {
     this.route.params.subscribe(params => {
       console.warn(params['category.strCategory']);
       this.category = params['category.strCategory'];
+      this.app.setTitle(`Quick and Tasty ${this.category.charAt(0).toUpperCase() + this.category.slice(1)} Recipes | Foodster`);
       const cachedDishes = JSON.parse(localStorage.getItem(this.category));
       if (cachedDishes !== null) {
         this.dishes = cachedDishes;

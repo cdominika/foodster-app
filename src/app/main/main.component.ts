@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Recipes, RecipesService} from '../recipes.service';
 import {ActivatedRoute} from '@angular/router';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-main',
@@ -12,7 +13,8 @@ export class MainComponent implements OnInit {
   random = {};
 
   constructor(private recipesService: RecipesService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private app: AppComponent) {
     const randomFromCache = JSON.parse(localStorage.getItem('random'));
     if (randomFromCache !== null || randomFromCache !== {}) {
       this.random = randomFromCache;
@@ -24,6 +26,7 @@ export class MainComponent implements OnInit {
     if (this.random === null) {
       this.fetchRandomRecipe();
     }
+    this.app.setTitle(`Tasty Recipes and Food Inspirations | Foodster`);
   }
 
     fetchRandomRecipe() {
