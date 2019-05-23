@@ -16,6 +16,8 @@ export interface Recipes {
 export class RecipesService {
   recipeURL = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
   categoryURL = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=';
+  randomURL = 'https://www.themealdb.com/api/json/v1/1/random.php';
+  allCategoriesURL = 'https://www.themealdb.com/api/json/v1/1/categories.php';
   constructor(private http: HttpClient) {}
     fetchRecipes(meal: any) {
     return this.http.get(this.recipeURL + meal);
@@ -23,4 +25,10 @@ export class RecipesService {
     fetchCategories(category: string) {
     return this.http.get(this.categoryURL + category);
     }
+  fetchRandom() {
+    return this.http.get(this.randomURL);
+  }
+  fetchAllCategories() {
+    return this.http.get(this.allCategoriesURL);
+  }
 }
