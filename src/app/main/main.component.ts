@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Recipes, RecipesService} from '../recipes.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -9,7 +11,8 @@ export class MainComponent implements OnInit {
 
   random = {};
 
-  constructor() {
+  constructor(private recipesService: RecipesService,
+              private route: ActivatedRoute) {
     const randomFromCache = JSON.parse(localStorage.getItem('random'));
     if (randomFromCache !== null || randomFromCache !== {}) {
       this.random = randomFromCache;
@@ -18,21 +21,17 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.fetchRandomRecipe();
-  }
-
-  fetchRandomRecipe() {
-    if (this.random !== null) {
-      return;
+    if (this.random === null) {
+      this.fetchRandomRecipe();
     }
-    fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
-      .then(res => res.json())
-      .then(resJson => {
-          this.random = resJson.meals[0];
-          console.log(this.random);
-          localStorage.setItem('random', JSON.stringify(this.random));
-        }
-      );
   }
 
-}
+    fetchRandomRecipe() {
+      this.recipesService.fetchRandom()
+        .subscribe((data: Recipes) => {
+          console.log(data);
+          this.random = data.meals[0];
+          localStorage.setItem('random', JSON.stringify(data.meals[0]));
+        });
+    }
+  }
