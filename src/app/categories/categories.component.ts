@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {RecipesService} from '../recipes.service';
 
 @Component({
   selector: 'app-categories',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class CategoriesComponent implements OnInit {
   categories = {};
 
-  constructor() {
+  constructor(private recipesService: RecipesService) {
     const navCached = JSON.parse(localStorage.getItem('nav'));
     if (navCached !== null || navCached !== {}) {
       this.categories = navCached;
@@ -25,10 +26,10 @@ export class CategoriesComponent implements OnInit {
       return;
     }
 
-    fetch(`https://www.themealdb.com/api/json/v1/1/list.php?c=list`)
-      .then(response => response.json())
-      .then(responseJson => {
-        this.categories = responseJson.meals;
+    this.recipesService.fetchAllCategories()
+      .subscribe((categories) => {
+        console.log(categories);
+        this.categories = categories;
         localStorage.setItem('nav', JSON.stringify(this.categories));
       });
   }
