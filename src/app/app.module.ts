@@ -11,6 +11,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { CategoryListingComponent } from './category-listing/category-listing.component';
 import { RecipeComponent } from './category-listing/recipe/recipe.component';
 import { RecipesService } from './recipes.service';
+import { CuisineListingComponent } from './cuisine-listing/cuisine-listing.component';
 
 const routes: Routes = [
   {
@@ -34,7 +35,8 @@ const routes: Routes = [
     NavComponent,
     CategoriesComponent,
     CategoryListingComponent,
-    RecipeComponent
+    RecipeComponent,
+    CuisineListingComponent
   ],
   imports: [
     BrowserModule,
