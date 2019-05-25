@@ -12,7 +12,6 @@ export class MainComponent implements OnInit {
 
   random = {};
   ingredients = [];
-  measures = [];
 
   constructor(private recipesService: RecipesService,
               private route: ActivatedRoute,
