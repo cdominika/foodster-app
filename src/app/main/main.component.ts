@@ -44,8 +44,10 @@ export class MainComponent implements OnInit {
     for (let i = 0; i < 21; i++) {
       console.log(this.random[`strIngredient${i}`]);
       let ingredient;
-      ingredient = `${this.random[`strMeasure${i}`]} ${this.random[`strIngredient${i}`]}`;
-      this.ingredients = [...this.ingredients, ingredient];
+      if (this.random[`strMeasure${i}`] !== undefined || this.random[`strIngredient${i}`] !== undefined) {
+        ingredient = `${this.random[`strMeasure${i}`]} ${this.random[`strIngredient${i}`]}`;
+        this.ingredients = [...this.ingredients, ingredient];
+      }
     }
     console.warn(this.ingredients);
     }
