@@ -44,8 +44,9 @@ export class MainComponent implements OnInit {
     listIngredients() {
     for (let i = 0; i < 21; i++) {
       console.log(this.random[`strIngredient${i}`]);
-      this.ingredients = [...this.ingredients, this.random[`strIngredient${i}`]];
-      this.measures = [...this.measures, this.random[`strMeasure${i}`]];
+      let ingredient;
+      ingredient = `${this.random[`strMeasure${i}`]} ${this.random[`strIngredient${i}`]}`;
+      this.ingredients = [...this.ingredients, ingredient];
     }
     console.warn(this.ingredients);
     }
