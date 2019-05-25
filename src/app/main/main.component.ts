@@ -12,6 +12,7 @@ export class MainComponent implements OnInit {
 
   random = {};
   ingredients = [];
+  measures = [];
 
   constructor(private recipesService: RecipesService,
               private route: ActivatedRoute,
@@ -44,6 +45,7 @@ export class MainComponent implements OnInit {
     for (let i = 0; i < 21; i++) {
       console.log(this.random[`strIngredient${i}`]);
       this.ingredients = [...this.ingredients, this.random[`strIngredient${i}`]];
+      this.measures = [...this.measures, this.random[`strMeasure${i}`]];
     }
     console.warn(this.ingredients);
     }
