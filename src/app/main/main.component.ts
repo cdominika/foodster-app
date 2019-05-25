@@ -28,7 +28,6 @@ export class MainComponent implements OnInit {
       this.fetchRandomRecipe();
     }
     this.app.setTitle(`Tasty Recipes and Food Inspirations | Foodster`);
-    this.listIngredients();
   }
 
     fetchRandomRecipe() {
@@ -37,6 +36,7 @@ export class MainComponent implements OnInit {
           console.log(data);
           this.random = data.meals[0];
           localStorage.setItem('random', JSON.stringify(data.meals[0]));
+          this.listIngredients();
         });
     }
 
