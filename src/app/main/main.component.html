@@ -22,7 +22,7 @@
       <div class="how-to">
         <h4>Ingredients</h4>
         <ul *ngFor="let int of ingredients">
-          <li *ngIf='int !== "" || random !== null'>
+          <li *ngIf='int !== " " && random !== null'>
              {{int}}
           </li>
         </ul>
