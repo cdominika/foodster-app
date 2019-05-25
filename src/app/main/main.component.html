@@ -9,11 +9,11 @@
           <h2>{{random.strMeal}}</h2>
           <section class="tags" *ngIf="random !== undefined">
             <p class="category"
-               routerLink={{random.strCategory.toLowerCase()}}-recipes>
+               routerLink={{random.strCategory.toLowerCase()}}>
               {{random.strCategory}} recipes
             </p>
             <p class="category"
-               routerLink={{random.strArea.toLowerCase()}}-recipes>
+               routerLink={{random.strArea.toLowerCase()}}>
               {{random.strArea}} cuisine
             </p>
           </section>
