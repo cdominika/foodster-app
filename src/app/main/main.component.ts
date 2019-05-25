@@ -11,6 +11,7 @@ import { AppComponent } from '../app.component';
 export class MainComponent implements OnInit {
 
   random = {};
+  ingredients = [];
 
   constructor(private recipesService: RecipesService,
               private route: ActivatedRoute,
@@ -27,6 +28,7 @@ export class MainComponent implements OnInit {
       this.fetchRandomRecipe();
     }
     this.app.setTitle(`Tasty Recipes and Food Inspirations | Foodster`);
+    this.listIngredients();
   }
 
     fetchRandomRecipe() {
@@ -36,5 +38,13 @@ export class MainComponent implements OnInit {
           this.random = data.meals[0];
           localStorage.setItem('random', JSON.stringify(data.meals[0]));
         });
+    }
+
+    listIngredients() {
+    for (let i = 0; i < 21; i++) {
+      console.log(this.random[`strIngredient${i}`]);
+      this.ingredients = [...this.ingredients, this.random[`strIngredient$${i}`]];
+    }
+    console.warn(this.ingredients);
     }
   }
