@@ -13,6 +13,7 @@ import { RecipeComponent } from './category-listing/recipe/recipe.component';
 import { RecipesService } from './recipes.service';
 import { CuisineListingComponent } from './cuisine-listing/cuisine-listing.component';
 import { ErrorComponent } from './error/error.component';
+import { RecommendedComponent } from './recommended/recommended.component';
 
 const routes: Routes = [
   {
@@ -46,7 +47,8 @@ const routes: Routes = [
     CategoryListingComponent,
     RecipeComponent,
     CuisineListingComponent,
-    ErrorComponent
+    ErrorComponent,
+    RecommendedComponent
   ],
   imports: [
     BrowserModule,
