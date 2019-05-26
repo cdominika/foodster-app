@@ -12,6 +12,8 @@ import { CategoryListingComponent } from './category-listing/category-listing.co
 import { RecipeComponent } from './category-listing/recipe/recipe.component';
 import { RecipesService } from './recipes.service';
 import { CuisineListingComponent } from './cuisine-listing/cuisine-listing.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
   {
@@ -40,7 +42,9 @@ const routes: Routes = [
     CategoriesComponent,
     CategoryListingComponent,
     RecipeComponent,
-    CuisineListingComponent
+    CuisineListingComponent,
+    NotFoundComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
