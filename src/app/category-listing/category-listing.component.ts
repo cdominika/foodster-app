@@ -35,8 +35,17 @@ export class CategoryListingComponent implements OnInit {
     this.recipesService.fetchCategories(category)
       .subscribe((data: Recipes) => {
         console.log(data.meals);
-        this.dishes = data.meals;
-        localStorage.setItem(this.category, JSON.stringify(this.dishes));
+        if (data.meals !== null) {
+          this.dishes = data.meals;
+          localStorage.setItem(this.category, JSON.stringify(this.dishes));
+        } else {
+          this.recipesService.fetchArea(category)
+            .subscribe((area: Recipes) => {
+              console.warn(area.meals);
+              this.dishes = area.meals;
+              localStorage.setItem(this.category, JSON.stringify(this.dishes));
+            });
+        }
       });
   }
   removeWhitespace(str) {

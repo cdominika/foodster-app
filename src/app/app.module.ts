@@ -25,6 +25,10 @@ const routes: Routes = [
   {
     path: ':category.strCategory/:dish.strMeal/:dish.idMeal',
     component: RecipeComponent
+  },
+  {
+    path: ':category.strArea',
+    component: CategoryListingComponent
   }
 ];
 
