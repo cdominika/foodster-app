@@ -6,11 +6,11 @@
         <h2>{{data.strMeal}}</h2>
         <section class="tags" *ngIf="data !== undefined">
           <p class="category"
-             routerLink={{data.strCategory.toLowerCase()}}>
+             routerLink="/category/{{data.strCategory.toLowerCase()}}">
             {{data.strCategory}} recipes
           </p>
           <p class="category"
-             routerLink={{data.strArea.toLowerCase()}}>
+             routerLink="/category/{{data.strArea.toLowerCase()}}">
             {{data.strArea}} cuisine
           </p>
         </section>
