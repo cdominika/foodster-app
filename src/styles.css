@@ -38,8 +38,10 @@ p, li {
   font-family: 'Lato', sans-serif;
   font-size: 18px;
   color: rgb(95, 93, 90);
+  line-height: 26px;
 }
 
 li {
   list-style: none;
+  margin-top: 5px;
 }
