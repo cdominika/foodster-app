@@ -12,7 +12,6 @@ import { CategoryListingComponent } from './category-listing/category-listing.co
 import { RecipeComponent } from './category-listing/recipe/recipe.component';
 import { RecipesService } from './recipes.service';
 import { CuisineListingComponent } from './cuisine-listing/cuisine-listing.component';
-import { NotFoundComponent } from './not-found/not-found.component';
 import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
@@ -21,17 +20,21 @@ const routes: Routes = [
     component: MainComponent
   },
   {
-    path: ':category.strCategory',
+    path: 'category/:category.strCategory',
     component: CategoryListingComponent
   },
   {
-    path: ':category.strCategory/:dish.strMeal/:dish.idMeal',
+    path: ':dish.strMeal/:dish.idMeal',
     component: RecipeComponent
   },
   {
-    path: ':category.strArea',
-    component: CategoryListingComponent
-  }
+    path: '404',
+    component: ErrorComponent
+  },
+  {
+    path: '**',
+    redirectTo: '/404'
+  },
 ];
 
 @NgModule({
@@ -43,7 +46,6 @@ const routes: Routes = [
     CategoryListingComponent,
     RecipeComponent,
     CuisineListingComponent,
-    NotFoundComponent,
     ErrorComponent
   ],
   imports: [

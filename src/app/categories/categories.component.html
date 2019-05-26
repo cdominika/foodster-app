@@ -3,7 +3,7 @@
 <div class="wrapper">
   <section class="categories" *ngIf="categories !== null && categories !== undefined">
     <li *ngFor="let category of categories.categories let i = index" class="category-name"
-        routerLink={{category.strCategory.toLowerCase()}}>
+        routerLink="/category/{{category.strCategory.toLowerCase()}}">
       {{category.strCategory}}
     </li>
   </section>
