@@ -2,6 +2,7 @@
   <h1>Quick and easy {{category}} recipes</h1>
   <section class="all-dishes" *ngIf="dishes !== null">
     <div class="dish-box" *ngFor="let dish of dishes, let i = index">
+      <div id="heart"></div>
       <img src="{{dish.strMealThumb}}" alt="{{dish.strMeal}}">
       <div class="details-box">
         <h2 class="dish" routerLink="/category/{{category}}/{{removeWhitespace(dish.strMeal).toLowerCase()}}/{{dish.idMeal}}">
