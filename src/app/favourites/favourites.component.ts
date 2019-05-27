@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class FavouritesComponent implements OnInit {
 
   constructor() { }
+    favs;
 
   ngOnInit() {
+    this.favs = localStorage.getItem('favourites');
+    console.warn(this.favs);
   }
 
 }
