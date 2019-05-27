@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Recipes, RecipesService} from '../recipes.service';
+import {AppComponent} from '../app.component';
 
 @Component({
   selector: 'app-favourites',
@@ -8,11 +9,13 @@ import {Recipes, RecipesService} from '../recipes.service';
 })
 export class FavouritesComponent implements OnInit {
 
-  constructor(private recipesService: RecipesService) { }
+  constructor(private recipesService: RecipesService,
+              private app: AppComponent) { }
     favs;
     favourites;
 
   ngOnInit() {
+    this.app.setTitle('Cookbook. All your favourite recipes in one place | Foodster');
     this.favs = localStorage.getItem('favourites');
     this.favs = JSON.parse(this.favs);
     console.warn(this.favs);
