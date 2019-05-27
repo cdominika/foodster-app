@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Recipes, RecipesService} from '../recipes.service';
 
 @Component({
   selector: 'app-favourites',
@@ -7,12 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavouritesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private recipesService: RecipesService) { }
     favs;
+    favourites;
 
   ngOnInit() {
     this.favs = localStorage.getItem('favourites');
+    this.favs = JSON.parse(this.favs);
     console.warn(this.favs);
+    this.showFavs();
   }
 
+  showFavs() {
+    for (const fave of this.favs) {
+      console.log(fave);
+      this.recipesService.fetchRecipes(fave)
+        .subscribe((data: Recipes) => {
+          console.log(data.meals[0]);
+          this.favourites = data.meals[0];
+        });
+    }
+  }
 }
