@@ -30,6 +30,10 @@ const routes: Routes = [
     component: RecipeComponent
   },
   {
+    path: 'favourite-recipes',
+    component: FavouritesComponent
+  },
+  {
     path: '404',
     component: ErrorComponent
   },
@@ -37,10 +41,6 @@ const routes: Routes = [
     path: '**',
     redirectTo: '/404'
   },
-  {
-    path: 'favourite-recipes',
-    component: FavouritesComponent
-  }
 ];
 
 @NgModule({
