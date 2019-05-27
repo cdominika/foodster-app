@@ -51,4 +51,8 @@ export class CategoryListingComponent implements OnInit {
   removeWhitespace(str) {
     return str.replace(/\s+/g, '-');
   }
+
+  saveRecipe(i) {
+    console.warn(i);
+  }
 }
