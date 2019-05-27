@@ -40,6 +40,14 @@ img {
   width: 50px;
   height: 40px;
   transform: scale(0.4);
+  left: 94px;
+  opacity: .5;
+}
+
+#heart:hover {
+  opacity: 1;
+  color: #fff;
+  cursor: pointer;
 }
 
 #heart:before,
@@ -47,10 +55,10 @@ img {
   position: absolute;
   content: "";
   left: 50px;
-  top: 0;
+  top: 120px;
   width: 50px;
   height: 80px;
-  background: #f054ad;
+  background: #f0cfe6;
   -moz-border-radius: 50px 50px 0 0;
   border-radius: 50px 50px 0 0;
   -webkit-transform: rotate(-45deg);
