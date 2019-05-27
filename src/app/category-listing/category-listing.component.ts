@@ -11,6 +11,7 @@ import { AppComponent } from '../app.component';
 export class CategoryListingComponent implements OnInit {
   dishes = [];
   category;
+  favourites = [];
   constructor(private recipesService: RecipesService,
               private route: ActivatedRoute,
               private app: AppComponent,
@@ -54,5 +55,8 @@ export class CategoryListingComponent implements OnInit {
 
   saveRecipe(i) {
     console.warn(i);
+    this.favourites = [...this.favourites, i];
+    console.log(this.favourites);
+    localStorage.setItem(`favourites`, JSON.stringify(this.favourites));
   }
 }
