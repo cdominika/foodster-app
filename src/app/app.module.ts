@@ -37,6 +37,10 @@ const routes: Routes = [
     path: '**',
     redirectTo: '/404'
   },
+  {
+    path: 'favourite-recipes',
+    component: FavouritesComponent
+  }
 ];
 
 @NgModule({
