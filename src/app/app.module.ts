@@ -11,7 +11,6 @@ import { CategoriesComponent } from './categories/categories.component';
 import { CategoryListingComponent } from './category-listing/category-listing.component';
 import { RecipeComponent } from './category-listing/recipe/recipe.component';
 import { RecipesService } from './recipes.service';
-import { CuisineListingComponent } from './cuisine-listing/cuisine-listing.component';
 import { ErrorComponent } from './error/error.component';
 import { RecommendedComponent } from './recommended/recommended.component';
 import { FavouritesComponent } from './favourites/favourites.component';
@@ -52,7 +51,6 @@ const routes: Routes = [
     CategoriesComponent,
     CategoryListingComponent,
     RecipeComponent,
-    CuisineListingComponent,
     ErrorComponent,
     RecommendedComponent,
     FavouritesComponent,
