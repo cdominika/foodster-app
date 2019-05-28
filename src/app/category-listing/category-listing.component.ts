@@ -54,11 +54,6 @@ export class CategoryListingComponent implements OnInit {
   }
 
   saveRecipe(i) {
-    console.warn(i);
-    if (this.favourites.includes(i) === false) {
-      this.favourites = [...this.favourites, i];
-      console.log(this.favourites);
-      localStorage.setItem(`favourites`, JSON.stringify(this.favourites));
-    }
+    this.recipesService.saveRecipe(i);
   }
 }
