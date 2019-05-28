@@ -68,7 +68,6 @@ li {
 .add {
   width: 20px;
   height: 20px;
-  margin-left: 16px;
   outline: none;
   border: none;
   border-radius: 2px;
@@ -76,6 +75,21 @@ li {
   color: #fff;
   font-size: 14px;
   font-weight: 600;
+  cursor: pointer;
+  padding-left: 0;
+}
+
+.wrap-add:hover {
+  /*background: #FEC031;*/
+}
+
+.wrap-add {
+  margin-left: 16px;
+  border-radius: 2px;
+  box-sizing: border-box;
+  padding: 1px;
+  padding-right: 8px;
+  transition: ease-in-out .2s;
 }
 
 
@@ -86,6 +100,7 @@ li {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  padding: 0;
   padding-left: 10px;
   color: #7a7a7a;
 

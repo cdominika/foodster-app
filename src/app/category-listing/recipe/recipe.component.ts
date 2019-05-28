@@ -60,6 +60,10 @@ export class RecipeComponent implements OnInit {
     }
   }
 
+  addToList(index) {
+    console.warn(this.ingredients[index]);
+  }
+
   saveRecipe(i) {
     this.recipesService.saveRecipe(i);
   }
