@@ -38,6 +38,7 @@ export class FavouritesComponent implements OnInit {
 
   removeFromFavourites(index) {
     this.favourites.splice(index, 1);
-    console.warn(this.favourites[index]);
+    this.favs.splice(index, 1);
+    localStorage.setItem('favourites', JSON.stringify(this.favs));
   }
 }
