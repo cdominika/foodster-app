@@ -69,6 +69,13 @@ li {
   width: 20px;
   height: 20px;
   margin-left: 16px;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  background: #FEC031;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 
