@@ -15,6 +15,7 @@ import { CuisineListingComponent } from './cuisine-listing/cuisine-listing.compo
 import { ErrorComponent } from './error/error.component';
 import { RecommendedComponent } from './recommended/recommended.component';
 import { FavouritesComponent } from './favourites/favourites.component';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 
 const routes: Routes = [
   {
@@ -55,6 +56,7 @@ const routes: Routes = [
     ErrorComponent,
     RecommendedComponent,
     FavouritesComponent,
+    ShoppingListComponent,
   ],
   imports: [
     BrowserModule,
