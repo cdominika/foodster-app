@@ -28,6 +28,7 @@ h1 {
 
 li {
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .category {
@@ -62,4 +63,29 @@ li {
   left: 210px;
   top: 40px;
 
+}
+
+.add {
+  width: 20px;
+  height: 20px;
+  margin-left: 16px;
+}
+
+
+.text-add {
+  visibility: hidden;
+  opacity: 0;
+  font-family: 'Lato', sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-left: 10px;
+  color: #7a7a7a;
+
+  transition: ease-in-out .2s;
+}
+
+.wrap-add:hover .text-add {
+  visibility: visible;
+  opacity: 1;
 }
