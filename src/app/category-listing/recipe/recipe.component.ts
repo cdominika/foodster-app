@@ -16,6 +16,7 @@ export class RecipeComponent implements OnInit {
   constructor(private recipesService: RecipesService,
               private route: ActivatedRoute, private router: Router,
               private app: AppComponent) {}
+
               showRecipes() {
     this.recipesService.fetchRecipes(this.id)
       .subscribe((data: Recipes) => {

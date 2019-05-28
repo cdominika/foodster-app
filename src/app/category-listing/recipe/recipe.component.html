@@ -20,7 +20,7 @@
     <div class="how-to">
       <h3>Ingredients</h3>
       <ul *ngFor="let int of ingredients">
-        <li *ngIf='int !== " " && data !== null'>
+        <li class="ingredient" *ngIf='int !== " " && data !== null'>
           {{int}}
         </li>
       </ul>
