@@ -35,4 +35,9 @@ export class FavouritesComponent implements OnInit {
   removeWhitespace(str) {
     return str.replace(/\s+/g, '-');
   }
+
+  removeFromFavourites(index) {
+    this.favourites.splice(index, 1);
+    console.warn(this.favourites[index]);
+  }
 }

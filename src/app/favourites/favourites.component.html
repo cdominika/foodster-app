@@ -4,7 +4,7 @@
 
 <section class="all-dishes" *ngIf="favourites !== null">
   <div class="dish-box" *ngFor="let dish of favourites, let i = index">
-    <button class="remove" (click)="removeFromFavourites()">Remove</button>
+    <button class="remove" (click)="removeFromFavourites(i)">Remove</button>
     <img src="{{dish.strMealThumb}}" alt="{{dish.strMeal}}">
     <div class="details-box">
       <h2 class="dish" routerLink="/category/{{dish.strCategory}}/{{removeWhitespace(dish.strMeal).toLowerCase()}}/{{dish.idMeal}}">
