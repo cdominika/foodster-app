@@ -54,7 +54,7 @@ const routes: Routes = [
     CuisineListingComponent,
     ErrorComponent,
     RecommendedComponent,
-    FavouritesComponent
+    FavouritesComponent,
   ],
   imports: [
     BrowserModule,

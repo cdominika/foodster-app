@@ -1,40 +1,3 @@
-ul, li {
-  list-style: none;
-}
-
-.dish-box {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 300px;
-  box-sizing: border-box;
-  padding: 10px;
-  margin: 20px;
-}
-
-img {
-  width: 98%;
-  border-radius: 5px;
-}
-
-.all-dishes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 100px;
-}
-
-.dish {
-  font-size: 16px;
-  font-weight: 600;
-}
-
 #heart {
   position: relative;
   width: 50px;
@@ -85,4 +48,11 @@ img {
   -ms-transform-origin: 100% 100%;
   -o-transform-origin: 100% 100%;
   transform-origin :100% 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 100px;
 }
