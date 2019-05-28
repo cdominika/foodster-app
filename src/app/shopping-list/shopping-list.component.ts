@@ -12,6 +12,7 @@ export class ShoppingListComponent implements OnInit {
 
   ngOnInit() {
     this.list = localStorage.getItem('shopping list');
+    this.list = JSON.parse(this.list);
     console.log(this.list);
   }
 
