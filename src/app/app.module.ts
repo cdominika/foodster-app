@@ -30,6 +30,10 @@ const routes: Routes = [
     component: RecipeComponent
   },
   {
+    path: 'shopping-list',
+    component: ShoppingListComponent
+  },
+  {
     path: 'favourite-recipes',
     component: FavouritesComponent
   },
