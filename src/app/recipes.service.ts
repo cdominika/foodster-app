@@ -19,6 +19,8 @@ export class RecipesService {
   randomURL = 'https://www.themealdb.com/api/json/v1/1/random.php';
   allCategoriesURL = 'https://www.themealdb.com/api/json/v1/1/categories.php';
   areaURL = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=';
+
+  favourites = [];
   constructor(private http: HttpClient) {}
     fetchRecipes(meal: any) {
     return this.http.get(this.recipeURL + meal);
@@ -34,5 +36,13 @@ export class RecipesService {
   }
   fetchArea(area: string) {
     return this.http.get(this.areaURL + area);
+  }
+  saveRecipe(i) {
+    console.warn(i);
+    if (this.favourites.includes(i) === false) {
+      this.favourites = [...this.favourites, i];
+      console.log(this.favourites);
+      localStorage.setItem(`favourites`, JSON.stringify(this.favourites));
+    }
   }
 }

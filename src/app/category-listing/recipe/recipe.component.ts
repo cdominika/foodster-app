@@ -57,7 +57,10 @@ export class RecipeComponent implements OnInit {
         this.ingredients = [...this.ingredients, ingredient];
       }
     }
-    console.warn(this.ingredients);
+  }
+
+  saveRecipe(i) {
+    this.recipesService.saveRecipe(i);
   }
 }
 

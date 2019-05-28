@@ -1,6 +1,7 @@
 <section *ngIf="data !== null && data !== undefined">
   <div class="wrapper">
     <div class="recipe-box">
+      <button class="favs-button button" (click)="saveRecipe(data.idMeal)">Save</button>
       <img class="thumb" src="{{data.strMealThumb}}">
       <div class="details-box">
         <h2>{{data.strMeal}}</h2>
