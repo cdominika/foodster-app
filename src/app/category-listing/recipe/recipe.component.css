@@ -56,7 +56,7 @@ li {
   max-width: 680px;
 }
 
-button {
+.recipe-button {
   width: 60px;
   font-size: 12px;
   left: 210px;

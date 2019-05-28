@@ -1,7 +1,7 @@
 <section *ngIf="data !== null && data !== undefined">
   <div class="wrapper">
     <div class="recipe-box">
-      <button class="favs-button button" (click)="saveRecipe(data.idMeal)">Save</button>
+      <button class="favs-button button recipe-button" (click)="saveRecipe(data.idMeal)">Save</button>
       <img class="thumb" src="{{data.strMealThumb}}">
       <div class="details-box">
         <h2>{{data.strMeal}}</h2>
@@ -22,7 +22,9 @@
       <ul *ngFor="let int of ingredients">
         <li class="ingredient" *ngIf='int !== " " && data !== null'>
           {{int}}
+          <button class="add">+</button>
         </li>
+
       </ul>
       <br>
       <h3>Instructions</h3>
