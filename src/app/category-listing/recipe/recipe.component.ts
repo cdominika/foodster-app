@@ -64,9 +64,11 @@ export class RecipeComponent implements OnInit {
 
   addToList(index) {
     console.warn(this.ingredients[index]);
-    this.shopping = [...this.shopping, this.ingredients[index]];
-    console.warn(this.shopping);
-    localStorage.setItem('shopping list', JSON.stringify(this.shopping));
+    if (this.shopping.includes(index) === false) {
+      this.shopping = [...this.shopping, this.ingredients[index]];
+      console.warn(this.shopping);
+      localStorage.setItem('shopping list', JSON.stringify(this.shopping));
+    }
   }
 
   saveRecipe(i) {
