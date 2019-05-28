@@ -77,3 +77,32 @@ img {
   font-size: 16px;
   font-weight: 600;
 }
+
+.favs-button {
+  width: 60px;
+  padding: 5px;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+}
+.button {
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  background: #fafafa;
+  color: #7a7a7a;
+  position: relative;
+  left: 94px;
+  top: 30px;
+  opacity: .8;
+  cursor: pointer;
+}
+.favs-button:hover {
+  background: #ffffff;
+  opacity: .93;
+}
+.favs-button:active {
+  background: #faf4eb;
+}
