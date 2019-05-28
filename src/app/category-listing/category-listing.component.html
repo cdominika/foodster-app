@@ -6,7 +6,7 @@
       <button class="favs-button button" (click)="saveRecipe(dish.idMeal)">Save</button>
       <img src="{{dish.strMealThumb}}" alt="{{dish.strMeal}}">
       <div class="details-box">
-        <h2 class="dish" routerLink="/category/{{dish.strCategory}}/{{removeWhitespace(dish.strMeal).toLowerCase()}}/{{dish.idMeal}}">
+        <h2 class="dish" routerLink="/category/{{category}}/{{removeWhitespace(dish.strMeal).toLowerCase()}}/{{dish.idMeal}}">
           {{dish.strMeal}}</h2>
       </div>
     </div>
