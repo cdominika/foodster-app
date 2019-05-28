@@ -52,5 +52,10 @@ h1 {
   max-width: 680px;
 }
 
+button {
+  width: 60px;
+  font-size: 12px;
+  left: 210px;
+  top: 40px;
 
-
+}

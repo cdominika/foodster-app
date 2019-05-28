@@ -11,11 +11,9 @@ import { AppComponent } from '../app.component';
 export class CategoryListingComponent implements OnInit {
   dishes = [];
   category;
-  favourites = [];
   constructor(private recipesService: RecipesService,
               private route: ActivatedRoute,
-              private app: AppComponent,
-              private router: Router) {}
+              private app: AppComponent) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
