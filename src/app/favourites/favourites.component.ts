@@ -12,7 +12,7 @@ export class FavouritesComponent implements OnInit {
   constructor(private recipesService: RecipesService,
               private app: AppComponent) { }
     favs;
-    favourites;
+    favourites = [];
 
   ngOnInit() {
     this.app.setTitle('Cookbook. All your favourite recipes in one place | Foodster');
@@ -28,8 +28,11 @@ export class FavouritesComponent implements OnInit {
       this.recipesService.fetchRecipes(fave)
         .subscribe((data: Recipes) => {
           console.log(data.meals[0]);
-          this.favourites = data.meals[0];
+          this.favourites = [...this.favourites, data.meals[0]];
         });
     }
+  }
+  removeWhitespace(str) {
+    return str.replace(/\s+/g, '-');
   }
 }
