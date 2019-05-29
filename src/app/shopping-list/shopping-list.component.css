@@ -1,6 +1,8 @@
 li {
     margin-top: 16px;
     border-bottom: 1px solid #eee;
+    height: 34px;
+    min-width: 200px;
     max-width: 450px;
 }
 

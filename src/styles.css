@@ -128,4 +128,13 @@ img {
   font-weight: 600;
   cursor: pointer;
   padding-left: 0;
+  transition: .2s ease-in-out;
+}
+
+.add:hover {
+  background: #f4a81b;
+}
+
+.add:active, .add:focus {
+  background: #eca33b;
 }
