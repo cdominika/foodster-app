@@ -16,4 +16,9 @@ export class ShoppingListComponent implements OnInit {
     console.log(this.list);
   }
 
+  removeFromList(index) {
+    this.list.splice(index, 1);
+    localStorage.setItem('shopping list', JSON.stringify(this.list));
+  }
+
 }

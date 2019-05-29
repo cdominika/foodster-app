@@ -3,3 +3,9 @@ li {
     border-bottom: 1px solid #eee;
     max-width: 450px;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
