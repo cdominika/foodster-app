@@ -20,15 +20,9 @@
         </div>
       </div>
       <div class="how-to">
-        <h3>Ingredients</h3>
-        <ul *ngFor="let int of ingredients">
-          <li *ngIf='int !== " " && random !== null'>
-             {{int}}
-          </li>
-        </ul>
-      <br>
-        <h3>Instructions</h3>
-        <p class="instructions">{{random.strInstructions}}</p>
+        <p class="instructions">{{random.strMeal}} is the perfect dish for you?
+          Learn how to make this delicious {{random.strMeal}} with these easy steps. </p>
+        <button class="more" routerLink="/category/{{category}}/{{removeWhitespace(dish.strMeal).toLowerCase()}}/{{dish.idMeal}}">Read more</button>
 <!--        <iframe width="600" height="315"-->
 <!--                src="{{random.strYoutube}}"-->
 <!--                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
