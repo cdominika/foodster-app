@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates:400,500');
 @import url('https://fonts.googleapis.com/css?family=Grand+Hotel');
-@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
 
 * {
   font-family: 'Montserrat Alternates', sans-serif;
@@ -41,8 +41,8 @@ h3 {
 }
 
 p, li {
-  font-family: 'Lato', sans-serif;
-  font-size: 18px;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 16px;
   color: rgb(95, 93, 90);
   line-height: 26px;
   outline: none;

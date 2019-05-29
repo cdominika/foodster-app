@@ -34,17 +34,17 @@ li {
 .category {
   color: rgb(95, 93, 90);
   text-align: center;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 600;
   letter-spacing: 1px;
   cursor: pointer;
   margin: 8px;
   margin-top: -10px;
-  padding: 10px;
+  padding: 5px 15px 5px 15px;
   background-color: rgba(238, 238, 238, 0.603);
   width: auto;
   box-sizing: border-box;
-  font-family: Lato, sans-serif;
+  font-family: 'Varela Round', sans-serif;
   text-transform: uppercase;
   border-radius: 4px;
 }

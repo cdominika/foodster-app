@@ -1,6 +1,7 @@
 ul {
   list-style: none;
   display: inline-block;
+  margin-top: 20px;
 }
 
 nav {
@@ -10,14 +11,14 @@ nav {
   justify-content: center;
   height: 100vh;
   position: fixed;
-  width: 100px;
+  width: 120px;
   background: rgb(250,186,29);
   background: linear-gradient(180deg, rgb(252, 183, 8) 0%, rgba(255,197,57,1) 44%, rgb(250, 171, 2) 100%);
   transition:  .4s ease;
 }
 
 nav:hover {
-  width: 110px;
+  width: 130px;
   -moz-transition: all .3s ease-in;
   -o-transition: all .3s ease-in;
   -webkit-transition: all .3s ease-in;
@@ -25,12 +26,16 @@ nav:hover {
 }
 
 li {
-  margin: 20px;
+  margin-top: 16px;
+  margin-left: 5px;
   outline: none;
   display: inline-block;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   text-align: center;
-  opacity: .1;
+  color: #fff;
+  font-family: 'Varela Round', sans-serif;
 }
