@@ -10,14 +10,14 @@ nav {
   justify-content: center;
   height: 100vh;
   position: fixed;
-  width: 40px;
+  width: 100px;
   background: rgb(250,186,29);
   background: linear-gradient(180deg, rgb(252, 183, 8) 0%, rgba(255,197,57,1) 44%, rgb(250, 171, 2) 100%);
   transition:  .4s ease;
 }
 
 nav:hover {
-  width: 90px;
+  width: 110px;
   -moz-transition: all .3s ease-in;
   -o-transition: all .3s ease-in;
   -webkit-transition: all .3s ease-in;
