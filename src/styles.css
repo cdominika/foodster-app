@@ -107,3 +107,24 @@ img {
 .favs-button:active {
   background: #faf4eb;
 }
+
+.recipe-button {
+  width: 60px;
+  font-size: 12px;
+  left: 210px;
+  top: 40px;
+}
+
+.add {
+  width: 20px;
+  height: 20px;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  background: #FEC031;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding-left: 0;
+}

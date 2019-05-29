@@ -1,6 +1,8 @@
 <div class="container">
   <h1>Shopping List</h1>
   <ul *ngIf="list !== null">
-    <li *ngFor="let ingredient of list, let i = index">{{ingredient}}</li>
+    <li *ngFor="let ingredient of list, let i = index">{{ingredient}}
+      <button class="recipe-button add remove">x</button>
+    </li>
   </ul>
 </div>
