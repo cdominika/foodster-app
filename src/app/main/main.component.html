@@ -19,7 +19,7 @@
           </section>
         </div>
       </div>
-      <div class="how-to">
+      <div class="how-to" *ngIF="random !== undefined">
         <p class="instructions">{{random.strMeal}} is the perfect dish for you?
           Learn how to make this delicious {{random.strMeal}} with these easy steps. </p>
         <button class="more" routerLink="/category/{{category}}/{{removeWhitespace(dish.strMeal).toLowerCase()}}/{{dish.idMeal}}">Read more</button>
