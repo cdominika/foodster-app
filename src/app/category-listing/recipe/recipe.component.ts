@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { RecipesService, Recipes } from '../../recipes.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import {AppComponent} from '../../app.component';
+import { DomSanitizer} from '@angular/platform-browser';
 
 
 @Component({
@@ -10,14 +11,15 @@ import {AppComponent} from '../../app.component';
   styleUrls: ['./recipe.component.css']
 })
 export class RecipeComponent implements OnInit {
-  data: Recipes;
+  data;
   id;
   ingredients = [];
   shopping = [];
 
   constructor(private recipesService: RecipesService,
               private route: ActivatedRoute, private router: Router,
-              private app: AppComponent) {}
+              private app: AppComponent,
+              private sanitizer: DomSanitizer) {}
 
               showRecipes() {
     this.recipesService.fetchRecipes(this.id)
@@ -45,6 +47,7 @@ export class RecipeComponent implements OnInit {
     } else {
       this.showRecipes();
     }
+    this.getVideoURL();
   }
 
   listIngredients() {
@@ -73,6 +76,17 @@ export class RecipeComponent implements OnInit {
   saveRecipe(i) {
     this.recipesService.saveRecipe(i);
   }
+
+  getVideoURL() {
+    if (this.data !== null && this.data !== undefined) {
+    console.log(this.data.strYoutube);
+    let splitUrl = this.data.strYoutube.split('=');
+    let id = splitUrl[1];
+    let url = `https://www.youtube.com/embed/${id}`;
+    console.log(url);
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
+}
 }
 
 

@@ -32,9 +32,9 @@
       <br>
       <h3>Instructions</h3>
       <p class="instructions">{{data.strInstructions}}</p>
-      <!--        <iframe width="600" height="315"-->
-      <!--                src="{{random.strYoutube}}"-->
-      <!--                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+             <iframe *ngIf="data !== undefined" width="600" height="315"
+                     [src]=getVideoURL()
+                     frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
   </div>
 </section>
