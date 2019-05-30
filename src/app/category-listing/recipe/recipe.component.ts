@@ -12,7 +12,7 @@ import {AppComponent} from '../../app.component';
 export class RecipeComponent implements OnInit {
   data: Recipes;
   id;
-  ingredients;
+  ingredients = [];
   shopping = [];
 
   constructor(private recipesService: RecipesService,
@@ -48,7 +48,6 @@ export class RecipeComponent implements OnInit {
   }
 
   listIngredients() {
-    this.ingredients = [];
     for (let i = 1; i < 21; i++) {
       console.log(this.data[`strIngredient${i}`]);
       let ingredient;
