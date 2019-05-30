@@ -1,8 +1,12 @@
-<div class="container" *ngIf="categoryNames !== null">
-<section>
-<h2>Recommended {{recommended}} Recipes</h2>
+<div class="container" *ngIf="categoryNames !== null && categoryNames !== undefined">
+<section *ngIf="recommended !== null && recommended !== undefined">
+<h2>Recommended {{recommended.strCategory}} Recipes</h2>
+<p>{{recommended.strCategoryDescription}}</p>
 <span *ngFor="let dish of dishes">
-<h3>{{dish.strMeal}}</h3>
+<img class="thumb" src="{{dish.strMealThumb}}">
+<div class="details-box">
+    <h2>{{dish.strMeal}}</h2>
+</div>
 </span>
 </section>
 </div>

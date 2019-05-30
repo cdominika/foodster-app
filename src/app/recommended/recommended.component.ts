@@ -16,10 +16,11 @@ export class RecommendedComponent implements OnInit {
   ngOnInit() {
     let categories = JSON.parse(localStorage.getItem('nav'));
     for (let category of categories.categories) {
-      this.categoryNames = [...this.categoryNames, category.strCategory]
+      this.categoryNames = [...this.categoryNames, category]
     }
     this.recommended = this.categoryNames[Math.floor(Math.random()*this.categoryNames.length)];
-    this.fetchRecommended(this.recommended);
+    this.fetchRecommended(this.recommended.strCategory);
+    console.log(this.recommended);
   }
 
 fetchRecommended(category) {
