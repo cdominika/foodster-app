@@ -47,7 +47,7 @@ export class RecipeComponent implements OnInit {
     } else {
       this.showRecipes();
     }
-    this.getVideoURL();
+    // this.getVideoURL();
   }
 
   listIngredients() {
