@@ -4,6 +4,13 @@ li {
     height: 34px;
     min-width: 200px;
     max-width: 450px;
+    transition: .1s ease-in-out;
+}
+
+li:hover {
+  color: #f4a81b;
+  cursor: pointer;
+  font-weight: 500;
 }
 
 .container {
