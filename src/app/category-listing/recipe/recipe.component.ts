@@ -24,7 +24,6 @@ export class RecipeComponent implements OnInit {
               showRecipes() {
     this.recipesService.fetchRecipes(this.id)
       .subscribe((data: Recipes) => {
-        console.log(data.meals[0]);
         this.data = data.meals[0];
         this.app.setTitle(`${data.meals[0].strMeal} Recipe | Foodster `);
         localStorage.setItem(this.id, JSON.stringify(this.data));
@@ -35,7 +34,6 @@ export class RecipeComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      console.log('params:' + params['dish.idMeal']);
       this.id = params['dish.idMeal'];
     });
     const cachedRecipe = JSON.parse(localStorage.getItem(this.id));
@@ -43,16 +41,13 @@ export class RecipeComponent implements OnInit {
     if (cachedRecipe !== null && ingredientsFromCache !== null) {
       this.data = cachedRecipe;
       this.ingredients = ingredientsFromCache;
-      console.warn(cachedRecipe);
     } else {
       this.showRecipes();
     }
-    // this.getVideoURL();
   }
 
   listIngredients() {
     for (let i = 1; i < 21; i++) {
-      console.log(this.data[`strIngredient${i}`]);
       let ingredient;
       if (this.data[`strMeasure${i}`] !== null
         && this.data[`strMeasure${i}`] !== undefined
@@ -68,7 +63,6 @@ export class RecipeComponent implements OnInit {
     console.warn(this.ingredients[index]);
     if (this.shopping.includes(this.ingredients[index]) === false) {
       this.shopping = [...this.shopping, this.ingredients[index]];
-      console.warn(this.shopping);
       localStorage.setItem('shopping list', JSON.stringify(this.shopping));
     }
   }
@@ -79,11 +73,9 @@ export class RecipeComponent implements OnInit {
 
   getVideoURL() {
     if (this.data !== null && this.data !== undefined) {
-    console.log(this.data.strYoutube);
     let splitUrl = this.data.strYoutube.split('=');
     let id = splitUrl[1];
     let url = `https://www.youtube.com/embed/${id}`;
-    console.log(url);
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 }
