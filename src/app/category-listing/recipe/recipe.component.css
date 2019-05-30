@@ -31,6 +31,14 @@ li {
   margin-top: 10px;
 }
 
+li:hover {
+  font-weight: 600;
+}
+
+li.focus, li.active {
+  color: rgb(158, 140, 101);
+}
+
 .category {
   color: rgb(95, 93, 90);
   text-align: center;
@@ -85,7 +93,7 @@ li {
   transition: ease-in-out .2s;
 }
 
-.wrap-add:hover .text-add {
+li:hover .text-add {
   visibility: visible;
   opacity: 1;
 }
