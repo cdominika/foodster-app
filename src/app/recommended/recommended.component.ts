@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipesService } from '../recipes.service';
 
 @Component({
   selector: 'app-recommended',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecommendedComponent implements OnInit {
 
-  constructor() { }
+  constructor(private recipesService: RecipesService) { }
+  dishes = [];
 
   ngOnInit() {
+    let categories = JSON.parse(localStorage.getItem('nav'));
+    console.log(categories);
+
   }
 
 }
