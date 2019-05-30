@@ -1,3 +1,8 @@
-<p>
-  recommended works!
-</p>
+<div class="container" *ngIf="categoryNames !== null">
+<section>
+<h2>Recommended {{recommended}} Recipes</h2>
+<span *ngFor="let dish of dishes">
+<h3>{{dish.strMeal}}</h3>
+</span>
+</section>
+</div>

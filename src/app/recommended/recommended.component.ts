@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RecipesService } from '../recipes.service';
+import { RecipesService, Recipes } from '../recipes.service';
 
 @Component({
   selector: 'app-recommended',
@@ -11,24 +11,23 @@ export class RecommendedComponent implements OnInit {
   constructor(private recipesService: RecipesService) { }
   dishes;
   categoryNames = [];
+  recommended;
 
   ngOnInit() {
     let categories = JSON.parse(localStorage.getItem('nav'));
-    console.log(categories);
     for (let category of categories.categories) {
       this.categoryNames = [...this.categoryNames, category.strCategory]
     }
-    console.log(this.categoryNames);
-    this.fetchRecommended();
+    this.recommended = this.categoryNames[Math.floor(Math.random()*this.categoryNames.length)];
+    this.fetchRecommended(this.recommended);
   }
 
-fetchRecommended() {
-  for (let i = 0; i < 3; i++)
-  this.recipesService.fetchCategories(this.categoryNames[i].toLowerCase())
-  .subscribe((dishes) => {
-    console.warn(dishes);
-    this.dishes = dishes;
-    localStorage.setItem(`recommended ${this.categoryNames[i]}`, JSON.stringify(this.dishes));
+fetchRecommended(category) {
+  this.recipesService.fetchCategories(category.toLowerCase())
+  .subscribe((dishes: Recipes) => {
+    this.dishes = dishes.meals.splice(0,3);
+    console.warn(this.dishes);
+    localStorage.setItem(`recommended ${category}`, JSON.stringify(this.dishes));
   });
 }
 }
