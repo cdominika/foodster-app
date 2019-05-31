@@ -44,6 +44,43 @@ h1 {
   border-radius: 4px;
 }
 
+h1 {
+  font-size: 56px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 46px;
+}
+
+.intro {
+  font-size: 18px;
+  max-width: 900px;
+}
+
+.background {
+  background: url('../../assets/bg1.jpg') center no-repeat;
+  width: 90vw;
+  background-size: 2000px;
+  height: 480px;
+}
+
+.img {
+  margin-top: 80px;
+  margin-left: -100px;
+  overflow: hidden;
+  display: flex;
+}
+
+.text-wrap {
+  grid-column: 2;
+}
+
+.wrap {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
 img {
   width: 98%;
   border-radius: 5px;
