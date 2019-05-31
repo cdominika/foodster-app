@@ -11,12 +11,8 @@
             {{random.strMeal}}</h2>
           <section class="tags" *ngIf="random !== undefined">
             <p class="category"
-               routerLink="/category/{{random.strCategory.toLowerCase()}}">
-              {{random.strCategory}} recipes
-            </p>
-            <p class="category"
-               routerLink="/category/{{random.strArea.toLowerCase()}}">
-              {{random.strArea}} cuisine
+               routerLink="/category/{{random.strCategory.toLowerCase()}}/{{removeWhitespace(random.strMeal).toLowerCase()}}/{{random.idMeal}}">
+              Read instructions
             </p>
           </section>
         </div>
