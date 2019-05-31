@@ -28,7 +28,7 @@ export class MainComponent implements OnInit {
     if (this.random === null) {
       this.fetchRandomRecipe();
     }
-    this.app.setTitle(`Tasty Recipes and Food Inspirations | Foodser`);
+    this.app.setTitle(`Tasty Recipes and Food Inspirations | Foodster`);
   }
 
   fetchRandomRecipe() {
