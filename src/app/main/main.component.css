@@ -49,8 +49,16 @@ h1 {
   text-align: center;
 }
 
-h2 {
+h2.welcome-text {
   margin-bottom: 46px;
+}
+
+h3 {
+  text-align: center;
+  color: rgb(63, 63, 63);
+  font-weight: 400;
+  font-size: 32px;
+  margin-top: 100px;
 }
 
 .intro {
@@ -73,10 +81,13 @@ h2 {
 }
 
 .text-wrap {
-  grid-column: 2;
+  grid-column: 2 / 2;
+  max-width: 800px;
+  padding: 20px;
 }
 
 .wrap {
+  margin-top: -20px;
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
