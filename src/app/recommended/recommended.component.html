@@ -1,12 +1,11 @@
 <div class="container" *ngIf="categoryNames !== null && categoryNames !== undefined">
-  <section *ngIf="recommended !== null && recommended !== undefined">
+  <section *ngIf="recommended !== null && recommended !== undefined && recommended !== []">
     <div class="recommended">
       <h2>Recommended {{recommended.strCategory}} Recipes</h2>
       <p class="desc">Long day at work? Tired of coming up with meal ideas everyday? Check out the most popular and best rated <strong>{{recommended.strCategory.toLowerCase()}}
        recipes </strong>  on <strong>Foodster:</strong></p>
     </div>
     </section>
-  
 <span>
     <div class="box" *ngFor="let dish of dishes">
       <img class="img" src="{{dish.strMealThumb}}">

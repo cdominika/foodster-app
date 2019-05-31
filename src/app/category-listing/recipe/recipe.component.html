@@ -1,7 +1,6 @@
 <section *ngIf="data !== null && data !== undefined">
   <div class="wrapper">
     <div class="recipe-box">
-      <button class="favs-button button recipe-button" (click)="saveRecipe(data.idMeal)">Save</button>
       <img class="thumb" src="{{data.strMealThumb}}">
       <div class="details-box">
         <h2>{{data.strMeal}}</h2>
@@ -18,7 +17,7 @@
       </div>
     </div>
     <div class="how-to">
-      <h3>Ingredients</h3>
+      <h3>Ingredients</h3> 
       <ul *ngFor="let int of ingredients, let i = index">
         <li class="ingredient" *ngIf='int !== " " && data !== null' (click)="addToList(i)">
           {{int}}
@@ -34,6 +33,7 @@
              <iframe *ngIf="data !== undefined" width="670" height="315"
                      [src]=getVideoURL()
                      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                     <button class="recipe-button favs-button" (click)="saveRecipe(data.idMeal)">Save</button>
     </div>
   </div>
 </section>

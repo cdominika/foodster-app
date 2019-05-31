@@ -58,7 +58,6 @@ li {
   list-style: none;
 }
 
-
 .dish-box {
   display: flex;
   justify-content: center;
@@ -114,13 +113,6 @@ li {
   background: #faf4eb;
 }
 
-.recipe-button {
-  width: 60px;
-  font-size: 12px;
-  left: 210px;
-  top: 40px;
-}
-
 .add {
   margin-left: 20px;
   width: 20px;
@@ -155,7 +147,7 @@ h2:active {
 
 iframe {
   margin-top: 36px;
-  margin-bottom: 120px;
+  margin-bottom: 50px;
 }
 
 .thumb {

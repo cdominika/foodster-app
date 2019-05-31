@@ -81,6 +81,30 @@ img {
   box-shadow: 0px 2px 44px -6px rgba(209, 209, 209, 0.726);
 }
 
+.recipe-button {
+  position: relative;
+  margin: 0 auto;
+  background: #FEC031;
+  width: 90px;
+  outline: none;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #fff;
+  margin-bottom: 50px;
+}
+
+.recipe-button:hover {
+  font-weight: 800;
+  background: rgb(250, 197, 73);
+  cursor: pointer;
+}
+
+.recipe-button:active {
+  background: rgb(240, 170, 9);
+}
+
 @media only screen and (max-width: 910px) {
   iframe {
     width: 500px;
@@ -91,6 +115,10 @@ img {
   iframe {
     width: 400px;
     height: 280px;
+  }
+
+  .category {
+    line-height: 16px;
   }
 }
 
@@ -103,9 +131,5 @@ img {
 @media only screen and (max-width: 440px) {
   h2 {
     font-size: 18px;
-  }
-
-  .category {
-    line-height: 16px;
-  }
+  }  
 }
