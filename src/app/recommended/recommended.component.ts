@@ -31,4 +31,8 @@ fetchRecommended(category) {
     localStorage.setItem(`recommended ${category}`, JSON.stringify(this.dishes));
   });
 }
+
+removeWhitespace(str) {
+  return str.replace(/\s+/g, '-');
+}
 }

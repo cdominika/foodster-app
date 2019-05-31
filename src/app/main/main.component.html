@@ -19,20 +19,6 @@
           </section>
         </div>
       </div>
-      <div class="how-to">
-        <h3>Ingredients</h3>
-        <ul *ngFor="let int of ingredients">
-          <li *ngIf='int !== " " && random !== null'>
-             {{int}}
-          </li>
-        </ul>
-      <br>
-        <h3>Instructions</h3>
-        <p class="instructions">{{random.strInstructions}}</p>
-<!--        <iframe width="600" height="315"-->
-<!--                src="{{random.strYoutube}}"-->
-<!--                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
-      </div>
     </div>
   </section>
 

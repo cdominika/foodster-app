@@ -1,12 +1,17 @@
 <div class="container" *ngIf="categoryNames !== null && categoryNames !== undefined">
-<section *ngIf="recommended !== null && recommended !== undefined">
-<h2>Recommended {{recommended.strCategory}} Recipes</h2>
-<p>{{recommended.strCategoryDescription}}</p>
-<span *ngFor="let dish of dishes">
-<img class="thumb" src="{{dish.strMealThumb}}">
-<div class="details-box">
-    <h2>{{dish.strMeal}}</h2>
-</div>
-</span>
-</section>
-</div>
+  <section *ngIf="recommended !== null && recommended !== undefined">
+    <div class="recommended">
+      <h2>Recommended <strong>{{recommended.strCategory}}</strong> Recipes</h2>
+    </div>
+    </section>
+  
+<span>
+    <div class="box" *ngFor="let dish of dishes">
+      <img class="img" src="{{dish.strMealThumb}}">
+       <h3 routerLink="/category/{{recommended.strCategory}}/{{removeWhitespace(dish.strMeal).toLowerCase()}}/{{dish.idMeal}}">
+        {{dish.strMeal}}</h3>
+        </div>
+      </span>
+      </div>
+
+    
