@@ -163,6 +163,14 @@ iframe {
   border-radius: 5px;
 }
 
+.recipe-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 540px;
+  margin-top: 40px;
+}
+
 @media only screen and (max-width: 360px) {
   .dish-box {
     margin: 0 auto;

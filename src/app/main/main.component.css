@@ -4,13 +4,6 @@
   justify-content: center;
 }
 
-.recipe-box {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 540px;
-  margin-top: 40px;
-}
 
 .thumb {
   width: 98%;
@@ -141,6 +134,7 @@ img {
   h3 {
     font-size: 22px;
   }
+
   .background {
     background-size: 1200px;
   }
@@ -157,3 +151,28 @@ img {
     margin-top: -20px;
   }
 }
+
+@media only screen and (max-width: 680px) {
+ h3 {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .img {
+    margin-left: -50px;
+  }
+
+  .background {
+    background-size: 1600px;
+    height: 400px;
+  }
+
+  div.text-wrap {
+    margin-left: 80px;
+  }
+
+}
+

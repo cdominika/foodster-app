@@ -6,7 +6,7 @@
 
 h2 {
     margin-top: 50px;
-    height: 30px;
+    height: auto;
     font-family: 'Varela Round', sans-serif;
     color: rgb(201, 199, 190);
     font-size: 28px;
@@ -52,7 +52,6 @@ span {
     margin-top: 120px;
     box-sizing: border-box;
     border-radius: 5px;
-    /* border: 2px solid rgb(255, 183, 0); */
     margin-bottom: 80px;
 }
 
@@ -85,3 +84,32 @@ img {
         max-width: 500px;
     }
   }
+
+@media only screen and (max-width: 770px) {
+    h2 {
+        font-size: 22px;
+    }
+
+    span {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    img.img {
+        width: 230px;
+    }
+}
+
+@media only screen and (max-width: 365px) {
+    .container {
+        width: 80vw;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    img.img {
+        width: 180px;
+    }
+}

@@ -4,14 +4,6 @@
   justify-content: center;
 }
 
-.recipe-box {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 540px;
-  margin-top: 40px;
-}
-
 .thumb {
   width: 98%;
   border-radius: 5px;
