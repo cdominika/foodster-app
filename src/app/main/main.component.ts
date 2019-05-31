@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Recipes, RecipesService} from '../recipes.service';
-import {ActivatedRoute} from '@angular/router';
+import { Recipes, RecipesService } from '../recipes.service';
+import { ActivatedRoute } from '@angular/router';
 import { AppComponent } from '../app.component';
 
 @Component({
@@ -14,8 +14,8 @@ export class MainComponent implements OnInit {
   ingredients = [];
 
   constructor(private recipesService: RecipesService,
-              private route: ActivatedRoute,
-              private app: AppComponent) {
+    private route: ActivatedRoute,
+    private app: AppComponent) {
     const randomFromCache = JSON.parse(localStorage.getItem('random'));
     const ingredientsFromCache = JSON.parse(localStorage.getItem('ingredients'));
     if (randomFromCache !== null || randomFromCache !== {}) {
@@ -26,24 +26,24 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.random === null ) {
+    if (this.random === null) {
       this.fetchRandomRecipe();
     }
     this.app.setTitle(`Tasty Recipes and Food Inspirations | Foodser`);
   }
 
-    fetchRandomRecipe() {
-      this.recipesService.fetchRandom()
-        .subscribe((data: Recipes) => {
-          console.log(data);
-          this.random = data.meals[0];
-          localStorage.setItem('random', JSON.stringify(data.meals[0]));
-          this.listIngredients();
-          localStorage.setItem('ingredients', JSON.stringify(this.ingredients));
-        });
-    }
+  fetchRandomRecipe() {
+    this.recipesService.fetchRandom()
+      .subscribe((data: Recipes) => {
+        console.log(data);
+        this.random = data.meals[0];
+        localStorage.setItem('random', JSON.stringify(data.meals[0]));
+        this.listIngredients();
+        localStorage.setItem('ingredients', JSON.stringify(this.ingredients));
+      });
+  }
 
-    listIngredients() {
+  listIngredients() {
     this.ingredients = [];
     for (let i = 1; i < 21; i++) {
       console.log(this.random[`strIngredient${i}`]);
@@ -57,9 +57,9 @@ export class MainComponent implements OnInit {
       }
     }
     console.warn(this.ingredients);
-    }
-
-    removeWhitespace(str) {
-      return str.replace(/\s+/g, '-');
-    }
   }
+
+  removeWhitespace(str) {
+    return str.replace(/\s+/g, '-');
+  }
+}

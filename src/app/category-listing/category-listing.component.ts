@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipesService, Recipes } from '../recipes.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AppComponent } from '../app.component';
 
 @Component({
@@ -12,8 +12,8 @@ export class CategoryListingComponent implements OnInit {
   dishes = [];
   category;
   constructor(private recipesService: RecipesService,
-              private route: ActivatedRoute,
-              private app: AppComponent) {}
+    private route: ActivatedRoute,
+    private app: AppComponent) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {

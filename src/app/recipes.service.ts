@@ -21,13 +21,13 @@ export class RecipesService {
   areaURL = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=';
 
   favourites = [];
-  constructor(private http: HttpClient) {}
-    fetchRecipes(meal: any) {
+  constructor(private http: HttpClient) { }
+  fetchRecipes(meal: any) {
     return this.http.get(this.recipeURL + meal);
-    }
-    fetchCategories(category: string) {
+  }
+  fetchCategories(category: string) {
     return this.http.get(this.categoryURL + category);
-    }
+  }
   fetchRandom() {
     return this.http.get(this.randomURL);
   }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {Title} from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +9,9 @@ import {Title} from '@angular/platform-browser';
 })
 export class AppComponent {
   public constructor(private titleService: Title,
-                     private route: ActivatedRoute) {}
+    private route: ActivatedRoute) { }
 
-  public setTitle( newTitle: string) {
+  public setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);
   }
 }

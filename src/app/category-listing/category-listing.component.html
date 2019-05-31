@@ -5,7 +5,8 @@
     <div class="dish-box" *ngFor="let dish of dishes, let i = index">
       <button class="favs-button button" (click)="saveRecipe(dish.idMeal)">Save</button>
       <img src="{{dish.strMealThumb}}" alt="{{dish.strMeal}}">
-      <div class="details-box" routerLink="/category/{{category}}/{{removeWhitespace(dish.strMeal).toLowerCase()}}/{{dish.idMeal}}">
+      <div class="details-box"
+        routerLink="/category/{{category}}/{{removeWhitespace(dish.strMeal).toLowerCase()}}/{{dish.idMeal}}">
         <h2 class="dish">
           {{dish.strMeal}}</h2>
       </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Recipes, RecipesService} from '../recipes.service';
-import {AppComponent} from '../app.component';
+import { Recipes, RecipesService } from '../recipes.service';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-favourites',
@@ -10,9 +10,9 @@ import {AppComponent} from '../app.component';
 export class FavouritesComponent implements OnInit {
 
   constructor(private recipesService: RecipesService,
-              private app: AppComponent) { }
-    favs;
-    favourites = [];
+    private app: AppComponent) { }
+  favs;
+  favourites = [];
 
   ngOnInit() {
     this.app.setTitle('Cookbook. All your favourite recipes in one place | Foodster');
@@ -24,13 +24,13 @@ export class FavouritesComponent implements OnInit {
 
   showFavs() {
     if (this.favs !== null) {
-    for (const fave of this.favs) {
-      console.log(fave);
-      this.recipesService.fetchRecipes(fave)
-        .subscribe((data: Recipes) => {
-          console.log(data.meals[0]);
-          this.favourites = [...this.favourites, data.meals[0]];
-        });
+      for (const fave of this.favs) {
+        console.log(fave);
+        this.recipesService.fetchRecipes(fave)
+          .subscribe((data: Recipes) => {
+            console.log(data.meals[0]);
+            this.favourites = [...this.favourites, data.meals[0]];
+          });
       }
     }
   }

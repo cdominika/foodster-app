@@ -18,23 +18,23 @@ export class RecommendedComponent implements OnInit {
     for (let category of categories.categories) {
       this.categoryNames = [...this.categoryNames, category]
     }
-    this.recommended = this.categoryNames[Math.floor(Math.random()*this.categoryNames.length)];
+    this.recommended = this.categoryNames[Math.floor(Math.random() * this.categoryNames.length)];
     this.fetchRecommended(this.recommended.strCategory);
     console.log(this.recommended);
   }
 
-fetchRecommended(category) {
-  this.recipesService.fetchCategories(category.toLowerCase())
-  .subscribe((dishes: Recipes) => {
-    if (dishes.meals) {
-    this.dishes = dishes.meals.splice(0,3);
-    console.warn(this.dishes);
-    localStorage.setItem(`recommended ${category}`, JSON.stringify(this.dishes));
-    }
-  });
-}
+  fetchRecommended(category) {
+    this.recipesService.fetchCategories(category.toLowerCase())
+      .subscribe((dishes: Recipes) => {
+        if (dishes.meals) {
+          this.dishes = dishes.meals.splice(0, 3);
+          console.warn(this.dishes);
+          localStorage.setItem(`recommended ${category}`, JSON.stringify(this.dishes));
+        }
+      });
+  }
 
-removeWhitespace(str) {
-  return str.replace(/\s+/g, '-');
-}
+  removeWhitespace(str) {
+    return str.replace(/\s+/g, '-');
+  }
 }

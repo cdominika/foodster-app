@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { RecipesService, Recipes } from '../../recipes.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import {AppComponent} from '../../app.component';
-import { DomSanitizer} from '@angular/platform-browser';
+import { AppComponent } from '../../app.component';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -17,11 +17,11 @@ export class RecipeComponent implements OnInit {
   shopping = [];
 
   constructor(private recipesService: RecipesService,
-              private route: ActivatedRoute, private router: Router,
-              private app: AppComponent,
-              private sanitizer: DomSanitizer) {}
+    private route: ActivatedRoute, private router: Router,
+    private app: AppComponent,
+    private sanitizer: DomSanitizer) { }
 
-              showRecipes() {
+  showRecipes() {
     this.recipesService.fetchRecipes(this.id)
       .subscribe((data: Recipes) => {
         this.data = data.meals[0];
@@ -30,7 +30,7 @@ export class RecipeComponent implements OnInit {
         this.listIngredients();
         localStorage.setItem('ingredients', JSON.stringify(this.ingredients));
       });
-              }
+  }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -73,12 +73,12 @@ export class RecipeComponent implements OnInit {
 
   getVideoURL() {
     if (this.data !== null && this.data !== undefined) {
-    let splitUrl = this.data.strYoutube.split('=');
-    let id = splitUrl[1];
-    let url = `https://www.youtube.com/embed/${id}`;
-    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+      let splitUrl = this.data.strYoutube.split('=');
+      let id = splitUrl[1];
+      let url = `https://www.youtube.com/embed/${id}`;
+      return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+    }
   }
-}
 }
 
 
