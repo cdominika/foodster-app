@@ -37,14 +37,14 @@ const routes: Routes = [
     path: 'favourite-recipes',
     component: FavouritesComponent
   },
-  // {
-  //   path: '404',
-  //   component: ErrorComponent
-  // },
-  // {
-  //   path: '**',
-  //   redirectTo: '/404'
-  // },
+  {
+    path: '404',
+    component: ErrorComponent
+  },
+  {
+    path: '**',
+    redirectTo: '/404'
+  },
 ];
 
 @NgModule({

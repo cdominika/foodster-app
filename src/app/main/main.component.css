@@ -44,6 +44,14 @@ h1 {
   border-radius: 4px;
 }
 
+img {
+  width: 98%;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 2px 44px -6px rgba(209, 209, 209, 0.726);
+  -moz-box-shadow: 0px 2px 44px -6px rgba(209, 209, 209, 0.726);
+  box-shadow: 0px 2px 44px -6px rgba(209, 209, 209, 0.726);
+}
+
 .category:hover {
   background-color: rgba(238, 238, 238, 0.966);
 }

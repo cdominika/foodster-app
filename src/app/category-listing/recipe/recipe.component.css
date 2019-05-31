@@ -101,3 +101,11 @@ li:hover .text-add {
 .remove {
   margin-left: 26px;
 }
+
+img {
+  width: 98%;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 2px 44px -6px rgba(209, 209, 209, 0.726);
+  -moz-box-shadow: 0px 2px 44px -6px rgba(209, 209, 209, 0.726);
+  box-shadow: 0px 2px 44px -6px rgba(209, 209, 209, 0.726);
+}
