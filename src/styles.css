@@ -23,7 +23,6 @@
   outline: none;
 }
 
-
 h2 {
   text-align: center;
   margin-bottom: 20px;
@@ -77,8 +76,17 @@ li {
 .dish {
   font-size: 16px;
   font-weight: 600;
+  cursor: pointer;
 
   transition: .1s ease-in-out;
+}
+
+.dish:hover {
+  color: #eb9b06;
+}
+
+.dish:active {
+  color: #fab331;
 }
 
 .favs-button {
@@ -135,14 +143,6 @@ li {
 
 .add:active, .add:focus {
   background: #eca33b;
-}
-
-h2:hover {
-  color: #eb9b06;
-}
-
-h2:active {
-  color: #fab331;
 }
 
 iframe {
