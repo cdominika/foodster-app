@@ -1,7 +1,17 @@
 .wrapper {
     display: flex;
     flex-direction: row;
-    margin-top: 100px;
     justify-content: space-evenly;
-    max-width: 1200px;
+    max-width: 900px;
 }
+
+.container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  img {
+      height: 400px;
+  }
