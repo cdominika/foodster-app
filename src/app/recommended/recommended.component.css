@@ -57,6 +57,7 @@ span {
 
 .desc {
     color: rgb(95, 93, 90);
+    text-align: center;
 }
 
 img {
@@ -94,9 +95,7 @@ img {
         flex-direction: column;
         justify-content: center;
     }
-}
 
-@media only screen and (max-width: 600px) {
     img.img {
         width: 230px;
     }
@@ -111,5 +110,9 @@ img {
 @media only screen and (max-width: 340px) {
     img.img {
         width: 180px;
+    }
+
+    .box {
+        margin-left: -20px;
     }
 }

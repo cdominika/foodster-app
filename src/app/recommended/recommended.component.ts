@@ -26,9 +26,11 @@ export class RecommendedComponent implements OnInit {
 fetchRecommended(category) {
   this.recipesService.fetchCategories(category.toLowerCase())
   .subscribe((dishes: Recipes) => {
+    if (dishes.meals) {
     this.dishes = dishes.meals.splice(0,3);
     console.warn(this.dishes);
     localStorage.setItem(`recommended ${category}`, JSON.stringify(this.dishes));
+    }
   });
 }
 
