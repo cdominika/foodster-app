@@ -2,7 +2,7 @@
 <h1>Your cookbook</h1>
 <p>Add your favourite recipes to your cookbook to use as an dinner inspiration for later.</p>
 
-<section class="all-dishes" *ngIf="favourites !== null">
+<section class="all-dishes" *ngIf="favourites !== null || favourites !== undefined">
   <div class="dish-box" *ngFor="let dish of favourites, let i = index">
     <button class="favs-button button" (click)="removeFromFavourites(i)">Remove</button>
     <img src="{{dish.strMealThumb}}" alt="{{dish.strMeal}}">
@@ -12,4 +12,6 @@
     </div>
   </div>
 </section>
+
+<app-recommended></app-recommended>
 </div>

@@ -23,6 +23,7 @@ export class FavouritesComponent implements OnInit {
   }
 
   showFavs() {
+    if (this.favs !== null) {
     for (const fave of this.favs) {
       console.log(fave);
       this.recipesService.fetchRecipes(fave)
@@ -30,6 +31,7 @@ export class FavouritesComponent implements OnInit {
           console.log(data.meals[0]);
           this.favourites = [...this.favourites, data.meals[0]];
         });
+      }
     }
   }
   removeWhitespace(str) {
