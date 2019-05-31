@@ -38,12 +38,6 @@ li {
   font-family: 'Varela Round', sans-serif;
 }
 
-.logo {
-  width: 90px;
-  margin-bottom: -660px;
-  margin-left: 10px;
-}
-
 @media only screen and (max-width : 630px) {
   ul, li {
     display: inline;
@@ -51,10 +45,29 @@ li {
     text-align: center;
     margin: 0;
     font-weight: 600;
+    color: rgb(250,186,29);
+    font-size: 12px;
   }
 
   nav, nav:hover {
     height: 40px;
     width: 100vw;
+    z-index: 1;
+    background: #fff;
+  }
+
+  nav {
+    border-bottom: 1px solid rgb(250,186,29);
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  ul, li {
+    display: block;
+    text-align: left;
+  }
+
+  nav {
+    height: auto;
   }
 }

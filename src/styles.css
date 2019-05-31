@@ -8,15 +8,13 @@
   padding: 0;
 }
 
-
 .details-box {
-  display: flex;
-  flex-direction: column;
   background-color: white;
   box-sizing: border-box;
   padding: 25px;
   border-radius: 10px;
   margin-top: -50px;
+  height: 70px;
   width: 90%;
   cursor: pointer;
 }
@@ -93,6 +91,7 @@ li {
   font-family: 'Lato', sans-serif;
   font-weight: 600;
 }
+
 .button {
   border-radius: 2px;
   outline: none;
@@ -105,10 +104,12 @@ li {
   opacity: .8;
   cursor: pointer;
 }
+
 .favs-button:hover {
   background: #ffffff;
   opacity: .93;
 }
+
 .favs-button:active {
   background: #faf4eb;
 }
@@ -161,3 +162,29 @@ iframe {
   width: 98%;
   border-radius: 5px;
 }
+
+@media only screen and (max-width: 360px) {
+  .dish-box {
+    margin: 0 auto;
+  }
+
+  .button {
+    position: relative;
+    left: 60px;
+  }
+}
+
+@media only screen and (max-width : 630px) {
+.dish-box {
+  margin-bottom: -20px;
+}
+
+.container, .all-dishes {
+  margin: 0 auto;
+}
+
+ h1 {
+   font-size: 24px;
+ }
+};
+
