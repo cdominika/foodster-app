@@ -5,4 +5,10 @@
       <button class="recipe-button add remove" (click)="removeFromList(i)">x</button>
     </li>
   </ul>
+  <section *ngIf="list === null || list === undefined">
+    <p class="no-shopping">No groceries today! 
+      <br> Add ingredients to your shopping list to make sure that you don't forget to buy anything.
+    </p>
+    <app-recommended></app-recommended>
+  </section>
 </div>
