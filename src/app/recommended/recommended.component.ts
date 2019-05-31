@@ -27,7 +27,6 @@ export class RecommendedComponent implements OnInit {
       .subscribe((dishes: Recipes) => {
         if (dishes.meals) {
           this.dishes = dishes.meals.splice(0, 3);
-          localStorage.setItem(`recommended ${category}`, JSON.stringify(this.dishes));
         }
       });
   }
