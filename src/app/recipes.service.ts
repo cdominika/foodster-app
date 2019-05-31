@@ -25,23 +25,26 @@ export class RecipesService {
   fetchRecipes(meal: any) {
     return this.http.get(this.recipeURL + meal);
   }
+
   fetchCategories(category: string) {
     return this.http.get(this.categoryURL + category);
   }
+
   fetchRandom() {
     return this.http.get(this.randomURL);
   }
+
   fetchAllCategories() {
     return this.http.get(this.allCategoriesURL);
   }
+
   fetchArea(area: string) {
     return this.http.get(this.areaURL + area);
   }
+
   saveRecipe(i) {
-    console.warn(i);
     if (this.favourites.includes(i) === false) {
       this.favourites = [...this.favourites, i];
-      console.log(this.favourites);
       localStorage.setItem(`favourites`, JSON.stringify(this.favourites));
     }
   }

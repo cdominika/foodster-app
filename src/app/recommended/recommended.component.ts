@@ -20,7 +20,6 @@ export class RecommendedComponent implements OnInit {
     }
     this.recommended = this.categoryNames[Math.floor(Math.random() * this.categoryNames.length)];
     this.fetchRecommended(this.recommended.strCategory);
-    console.log(this.recommended);
   }
 
   fetchRecommended(category) {
@@ -28,7 +27,6 @@ export class RecommendedComponent implements OnInit {
       .subscribe((dishes: Recipes) => {
         if (dishes.meals) {
           this.dishes = dishes.meals.splice(0, 3);
-          console.warn(this.dishes);
           localStorage.setItem(`recommended ${category}`, JSON.stringify(this.dishes));
         }
       });

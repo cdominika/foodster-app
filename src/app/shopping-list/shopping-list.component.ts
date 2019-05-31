@@ -15,7 +15,6 @@ export class ShoppingListComponent implements OnInit {
     this.app.setTitle('Add your groceries to shopping list | Foodster');
     this.list = localStorage.getItem('shopping list');
     this.list = JSON.parse(this.list);
-    console.log(this.list);
   }
 
   removeFromList(index) {

@@ -21,7 +21,6 @@ export class MainComponent implements OnInit {
     if (randomFromCache !== null || randomFromCache !== {}) {
       this.random = randomFromCache;
       this.ingredients = ingredientsFromCache;
-      console.warn(randomFromCache);
     }
   }
 
@@ -35,7 +34,6 @@ export class MainComponent implements OnInit {
   fetchRandomRecipe() {
     this.recipesService.fetchRandom()
       .subscribe((data: Recipes) => {
-        console.log(data);
         this.random = data.meals[0];
         localStorage.setItem('random', JSON.stringify(data.meals[0]));
         this.listIngredients();
@@ -46,7 +44,6 @@ export class MainComponent implements OnInit {
   listIngredients() {
     this.ingredients = [];
     for (let i = 1; i < 21; i++) {
-      console.log(this.random[`strIngredient${i}`]);
       let ingredient;
       if (this.random[`strMeasure${i}`] !== null
         && this.random[`strMeasure${i}`] !== undefined
@@ -56,7 +53,6 @@ export class MainComponent implements OnInit {
         this.ingredients = [...this.ingredients, ingredient];
       }
     }
-    console.warn(this.ingredients);
   }
 
   removeWhitespace(str) {

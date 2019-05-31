@@ -18,17 +18,14 @@ export class FavouritesComponent implements OnInit {
     this.app.setTitle('Cookbook. All your favourite recipes in one place | Foodster');
     this.favs = localStorage.getItem('favourites');
     this.favs = JSON.parse(this.favs);
-    console.warn(this.favs);
     this.showFavs();
   }
 
   showFavs() {
     if (this.favs !== null) {
       for (const fave of this.favs) {
-        console.log(fave);
         this.recipesService.fetchRecipes(fave)
           .subscribe((data: Recipes) => {
-            console.log(data.meals[0]);
             this.favourites = [...this.favourites, data.meals[0]];
           });
       }

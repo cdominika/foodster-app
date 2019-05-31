@@ -13,7 +13,6 @@ export class CategoriesComponent implements OnInit {
     const navCached = JSON.parse(localStorage.getItem('nav'));
     if (navCached !== null || navCached !== {}) {
       this.categories = navCached;
-      console.warn(navCached); // działa
     }
   }
 
@@ -28,7 +27,6 @@ export class CategoriesComponent implements OnInit {
 
     this.recipesService.fetchAllCategories()
       .subscribe((categories) => {
-        console.log(categories);
         this.categories = categories;
         localStorage.setItem('nav', JSON.stringify(this.categories));
       });

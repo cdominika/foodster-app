@@ -17,13 +17,11 @@ export class CategoryListingComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      console.warn(params['category.strCategory']);
       this.category = params['category.strCategory'];
       this.app.setTitle(`Quick and Tasty ${this.category.charAt(0).toUpperCase() + this.category.slice(1)} Recipes | Foodster`);
       const cachedDishes = JSON.parse(localStorage.getItem(this.category));
       if (cachedDishes !== null) {
         this.dishes = cachedDishes;
-        console.warn(cachedDishes);
       } else {
         this.fetchCategoryDishes(this.category);
       }
@@ -33,14 +31,12 @@ export class CategoryListingComponent implements OnInit {
   fetchCategoryDishes(category) {
     this.recipesService.fetchCategories(category)
       .subscribe((data: Recipes) => {
-        console.log(data.meals);
         if (data.meals !== null) {
           this.dishes = data.meals;
           localStorage.setItem(this.category, JSON.stringify(this.dishes));
         } else {
           this.recipesService.fetchArea(category)
             .subscribe((area: Recipes) => {
-              console.warn(area.meals);
               this.dishes = area.meals;
               localStorage.setItem(this.category, JSON.stringify(this.dishes));
             });
