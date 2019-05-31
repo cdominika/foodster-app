@@ -174,7 +174,7 @@ iframe {
   }
 }
 
-@media only screen and (max-width : 630px) {
+@media only screen and (max-width : 680px) {
 .dish-box {
   margin-bottom: -20px;
 }
