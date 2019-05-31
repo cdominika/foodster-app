@@ -11,15 +11,6 @@ li {
   flex-direction: row;
 }
 
-input {
-  width: 500px;
-  margin-left: 430px;
-  border: none;
-  border-bottom: 1px solid #eee;
-  padding: 5px;
-  outline: none;
-}
-
 .categories {
   margin-top: 20px;
   display: flex;
@@ -41,9 +32,8 @@ input {
   margin-top: 0;
   font-size: 12px;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 1px;
-  /* text-shadow: 1px 1px 0px rgba(131, 95, 17, 0.247); */
   background-size: 300% 100%;
   transition: all .3s ease-in-out;
 }
