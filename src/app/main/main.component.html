@@ -6,7 +6,8 @@
       <div class="recipe-box">
         <img class="thumb" src="{{random.strMealThumb}}">
         <div class="details-box">
-          <h2>{{random.strMeal}}</h2>
+          <h2 routerLink="/category/{{random.strCategory.toLowerCase()}}/{{removeWhitespace(random.strMeal).toLowerCase()}}/{{random.idMeal}}">
+            {{random.strMeal}}</h2>
           <section class="tags" *ngIf="random !== undefined">
             <p class="category"
                routerLink="/category/{{random.strCategory.toLowerCase()}}">

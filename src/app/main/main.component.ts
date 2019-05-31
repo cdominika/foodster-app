@@ -58,4 +58,8 @@ export class MainComponent implements OnInit {
     }
     console.warn(this.ingredients);
     }
+
+    removeWhitespace(str) {
+      return str.replace(/\s+/g, '-');
+    }
   }
